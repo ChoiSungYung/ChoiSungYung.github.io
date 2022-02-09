@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html>
+    <script id="allow-copy_script">(function agent() {
+    let unlock = false
+    document.addEventListener('allow_copy', (event) => {
+      unlock = event.detail.unlock
+    })
+
+    const copyEvents = [
+      'copy',
+      'cut',
+      'contextmenu',
+      'selectstart',
+      'mousedown',
+      'mouseup',
+      'mousemove',
+      'keydown',
+      'keypress',
+      'keyup',
+    ]
+    const rejectOtherHandlers = (e) => {
+      if (unlock) {
+        e.stopPropagation()
+        if (e.stopImmediatePropagation) e.stopImmediatePropagation()
+      }
+    }
+    copyEvents.forEach((evt) => {
+      document.documentElement.addEventListener(evt, rejectOtherHandlers, {
+        capture: true,
+      })
+    })
+  })()</script><head>
+<meta charset="UTF-8">
+<title>상품 페이지</title>
+<meta name="viewport" content="width=device-width; initial-scale=1.0, userscalable=no">
+<!-- 합쳐지고 최소화된 최신 CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+<!-- 부가적인 테마 -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+<!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+<script src="js/jquery-latest.js"></script>
+<link rel="stylesheet" href="datatables.min.css">
+<link rel="stylesheet" href="./css/main.css">
+<link rel="stylesheet" href="./css/header.css">
+<link rel="stylesheet" type="text/css" href="http://kenwheeler.github.io/slick/slick/slick.css">
+<link rel="stylesheet" type="text/css" href="http://kenwheeler.github.io/slick/slick/slick-theme.css">
+<script src="http://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="http://kenwheeler.github.io/slick/slick/slick.min.js"></script>
+<script src="datatables.min.js"></script>
+<script src="chrome-extension://mooikfkahbdckldjjndioackbalphokd/assets/prompt.js"></script></head>
+<body>
+<div class="container">
+	
+    
+	<style>
+	.tnb { float:right; }
+	.tnb li { float:left; margin-left:15px; height: 42px;  }
+	.tnb li a {display:block;height:42px;color: #303030;font-weight: 800; line-height: 42px;}
+	#gnb { clear:both; }
+	</style>
+	<header class="hd fix">
+        <a href="index.jsp"><img src="./img/logo.png" style="padding-top:20px; padding-bottom:20px"></a>
+        <nav class="tnb">
+        	<ul>
+					
+						<li><a href="login.jsp">로그인</a></li>
+						<li><a href="join.jsp">회원가입</a></li>
+
+					
+        	</ul>
+        </nav>
+		<nav class="navbar navbar-inverse navbar-static-top" id="gnb">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">메뉴</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">
+                <li class="active"><a href="index.jsp">홈</a></li>
+                <li><a href="company.jsp">회사소개</a></li>
+                <li><a href="contact.jsp">제휴신청</a></li>
+                <li><a href="GetProductListCtrl" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">상품보기</a></li>
+                <li><a href="GetBoardListCtrl2">회원참여게시판</a></li>
+                <li><a href="GetInformListCtrl2">공지사항</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+	</header>
+	<div class="content">
+	
+
+<div class="slide-container">
+  <div class="slick-items slick-initialized slick-slider slick-dotted" role="toolbar"><button type="button" data-role="none" class="slick-prev slick-arrow" aria-label="Previous" role="button" style="">Previous</button>
+    <div aria-live="polite" class="slick-list draggable"><div class="slick-track" role="listbox" style="opacity: 1; width: 8640px; transform: translate3d(-2160px, 0px, 0px);"><div class="slick-slide slick-cloned" data-slick-index="-1" aria-hidden="true" tabindex="-1" style="width: 1080px;"><img src="./img/book6.jpg"></div><div class="slick-slide" data-slick-index="0" aria-hidden="true" tabindex="-1" role="option" aria-describedby="slick-slide00" style="width: 1080px;"><img src="./img/book1.jpg"></div><div class="slick-slide slick-current slick-active" data-slick-index="1" aria-hidden="false" tabindex="-1" role="option" aria-describedby="slick-slide01" style="width: 1080px;"><img src="./img/book2.jpg"></div><div class="slick-slide" data-slick-index="2" aria-hidden="true" tabindex="-1" role="option" aria-describedby="slick-slide02" style="width: 1080px;"><img src="./img/book3.jpg"></div><div class="slick-slide" data-slick-index="3" aria-hidden="true" tabindex="-1" role="option" aria-describedby="slick-slide03" style="width: 1080px;"><img src="./img/book4.jpg"></div><div class="slick-slide" data-slick-index="4" aria-hidden="true" tabindex="-1" role="option" aria-describedby="slick-slide04" style="width: 1080px;"><img src="./img/book5.jpg"></div><div class="slick-slide" data-slick-index="5" aria-hidden="true" tabindex="-1" role="option" aria-describedby="slick-slide05" style="width: 1080px;"><img src="./img/book6.jpg"></div><div class="slick-slide slick-cloned" data-slick-index="6" aria-hidden="true" tabindex="-1" style="width: 1080px;"><img src="./img/book1.jpg"></div></div></div>
+    
+    
+    
+    
+    
+  <button type="button" data-role="none" class="slick-next slick-arrow" aria-label="Next" role="button" style="">Next</button><ul class="slick-dots" style="" role="tablist"><li class="" aria-hidden="true" role="presentation" aria-selected="true" aria-controls="navigation00" id="slick-slide00"><button type="button" data-role="none" role="button" tabindex="0">1</button></li><li aria-hidden="false" role="presentation" aria-selected="false" aria-controls="navigation01" id="slick-slide01" class="slick-active"><button type="button" data-role="none" role="button" tabindex="0">2</button></li><li aria-hidden="true" role="presentation" aria-selected="false" aria-controls="navigation02" id="slick-slide02"><button type="button" data-role="none" role="button" tabindex="0">3</button></li><li aria-hidden="true" role="presentation" aria-selected="false" aria-controls="navigation03" id="slick-slide03"><button type="button" data-role="none" role="button" tabindex="0">4</button></li><li aria-hidden="true" role="presentation" aria-selected="false" aria-controls="navigation04" id="slick-slide04"><button type="button" data-role="none" role="button" tabindex="0">5</button></li><li aria-hidden="true" role="presentation" aria-selected="false" aria-controls="navigation05" id="slick-slide05"><button type="button" data-role="none" role="button" tabindex="0">6</button></li></ul></div>
+</div>
+
+<script type="text/javascript">
+$(document).ready(function () {
+	$('.slick-items').slick({
+		autoplay : true,
+		dots: true,
+		speed : 1000 /* 이미지가 슬라이딩시 걸리는 시간 */,
+		infinite: true,
+		autoplaySpeed: 3000 /* 이미지가 다른 이미지로 넘어 갈때의 텀 */,
+		arrows: true,
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		fade: false
+	});
+});
+</script>
+
+
+		<h2 class="tit">공지사항 보기</h2>
+		<table class="table" id="inform_tb">
+			<thead>
+				<tr>
+					<th class="item2">제목</th>
+					<th class="item3">작성자</th>
+					<th class="item4">날짜</th>
+
+				</tr>
+			</thead>
+			
+				<tbody><tr>	
+					<td>
+						 
+						<a href="GetInformCtrl2?seq=22&amp;pageNum=1">판매 관련 공지</a>
+					</td>					<td class="item3">ch</td>
+					<td class="item4">2021-12-27</td>
+				</tr>
+			
+				<tr>	
+					<td>
+						 
+						<a href="GetInformCtrl2?seq=21&amp;pageNum=1">회원가입 관련</a>
+					</td>					<td class="item3">관리자</td>
+					<td class="item4">2021-12-27</td>
+				</tr>
+			
+				<tr>	
+					<td>
+						 
+						<a href="GetInformCtrl2?seq=20&amp;pageNum=1">이벤트 당첨자 안내</a>
+					</td>					<td class="item3">관리자</td>
+					<td class="item4">2021-12-27</td>
+				</tr>
+			
+				<tr>	
+					<td>
+						 
+						<a href="GetInformCtrl2?seq=19&amp;pageNum=1">최신 업데이트 사이트</a>
+					</td>					<td class="item3">관리자</td>
+					<td class="item4">2021-12-27</td>
+				</tr>
+			
+				<tr>	
+					<td>
+						 
+						<a href="GetInformCtrl2?seq=18&amp;pageNum=1">캐시 적립 관련 안내문</a>
+					</td>					<td class="item3">관리자</td>
+					<td class="item4">2021-12-27</td>
+				</tr>
+			
+		</tbody></table>
+	
+		<h2 class="tit">무료도서 보기</h2>
+			<ul class="product-container">
+			
+				<li class="col-xs-6 col-md-4">
+					<a href="GetProductCtrl?proid=8" class="thumbnail">
+						<div class="d_container">
+							<div class="div_box">
+							<img src="./img/book8.jpg" alt="삶의 중심은 가족으로부터 시작한다.
+결혼하는 딸의 앞날을 축복하며 한 줄 한 줄 적어 내려간 아버지의 마음이 가득하다!
+" class="thumbnail_img">
+							</div>
+						</div>
+						<p style="padding-top:10px;"><span class="protype">블라우스 M</span></p>
+						<h4 class="proname">현대시</h4>
+						<p class="price">10000 원</p>
+						<p class="procom">삶의 중심은 가족으로부터 시작한다.
+결혼하는 딸의 앞날을 축복하며 한 줄 한 줄 적어 내려간 아버지의 마음이 가득하다!
+</p>
+					</a>
+			
+				</li><li class="col-xs-6 col-md-4">
+					<a href="GetProductCtrl?proid=7" class="thumbnail">
+						<div class="d_container">
+							<div class="div_box">
+							<img src="./img/book7.jpg" alt="상위 1% 공인중개사 빌사남의 특급 영업 비밀 대공개!
+그는 어떻게 톱클래스 공인중개사가 되었을까?" class="thumbnail_img">
+							</div>
+						</div>
+						<p style="padding-top:10px;"><span class="protype">경제/경영</span></p>
+						<h4 class="proname">매출 100억 공인중개사는 이렇게 영업합니다</h4>
+						<p class="price">10000 원</p>
+						<p class="procom">상위 1% 공인중개사 빌사남의 특급 영업 비밀 대공개!
+그는 어떻게 톱클래스 공인중개사가 되었을까?</p>
+					</a>
+			
+				</li><li class="col-xs-6 col-md-4">
+					<a href="GetProductCtrl?proid=6" class="thumbnail">
+						<div class="d_container">
+							<div class="div_box">
+							<img src="./img/book6.jpg" alt="혼란스러운 세상에
+법정이 지혜로 답하다!" class="thumbnail_img">
+							</div>
+						</div>
+						<p style="padding-top:10px;"><span class="protype">에세이</span></p>
+						<h4 class="proname">법정 잠언집 365</h4>
+						<p class="price">10000 원</p>
+						<p class="procom">혼란스러운 세상에
+법정이 지혜로 답하다!</p>
+					</a>
+			
+				</li><li class="col-xs-6 col-md-4">
+					<a href="GetProductCtrl?proid=5" class="thumbnail">
+						<div class="d_container">
+							<div class="div_box">
+							<img src="./img/book5.jpg" alt="내 인생의 컬러를 찾아 오늘도 열일하는
+스타일리스트 나림비의 마음 일기" class="thumbnail_img">
+							</div>
+						</div>
+						<p style="padding-top:10px;"><span class="protype">에세이</span></p>
+						<h4 class="proname">내일은 컬러풀</h4>
+						<p class="price">15000 원</p>
+						<p class="procom">내 인생의 컬러를 찾아 오늘도 열일하는
+스타일리스트 나림비의 마음 일기</p>
+					</a>
+			
+				</li><li class="col-xs-6 col-md-4">
+					<a href="GetProductCtrl?proid=4" class="thumbnail">
+						<div class="d_container">
+							<div class="div_box">
+							<img src="./img/book4.jpg" alt="★이탈리아 대표 어린이 백과사전 시리즈★
+★전 세계 19개국 어린이들에게 사랑받는 명작★" class="thumbnail_img">
+							</div>
+						</div>
+						<p style="padding-top:10px;"><span class="protype">아동</span></p>
+						<h4 class="proname">정말정말 신기한 환상동물 백과사전</h4>
+						<p class="price">17000 원</p>
+						<p class="procom">★이탈리아 대표 어린이 백과사전 시리즈★
+★전 세계 19개국 어린이들에게 사랑받는 명작★</p>
+					</a>
+			
+				</li><li class="col-xs-6 col-md-4">
+					<a href="GetProductCtrl?proid=3" class="thumbnail">
+						<div class="d_container">
+							<div class="div_box">
+							<img src="./img/book3.jpg" alt="독일 국민 셰프 호르스트 리히터 씨의 괴랄한 마음 처방" class="thumbnail_img">
+							</div>
+						</div>
+						<p style="padding-top:10px;"><span class="protype">에세이</span></p>
+						<h4 class="proname">루헤의 시간</h4>
+						<p class="price">16000 원</p>
+						<p class="procom">독일 국민 셰프 호르스트 리히터 씨의 괴랄한 마음 처방</p>
+					</a>
+			
+			</li></ul>
+			<script>
+				//var container = document.querySelector('#mason');
+				//var msnry = new Masonry(container);
+			</script>
+		</div>
+	</div>
+		
+					
+    <style>    
+    /* .ft{clear:both; width:100%; background-color:#cbcbcb}
+    .ft:before { content:""; display:block; width: 100%; height: 48px; 
+	.ft .ft_container{margin:auto; width:1000px; height:140px; padding:20px 0px; padding-bottom:20px; position:relative; min-height:100%;}
+	.ft ul:after, .ft ul li ul:after{content: ""; clear: both; overflow:hidden; display: block;}
+	.ft ul li{float: left; color: #666;}
+	.ft ul li.logo{margin-top:10px;}
+	.ft ul li.adress{margin-left: 40px; line-height:18px}
+	.ft ul li.adress .link{display: inline-block; margin:0; width:540px}
+	.ft ul li.adress .link li{float:left; margin:0 0 7px 0}
+	@media screen and (-webkit-min-device-pixel-ratio:0) { .footer ul li.adress .link li {margin:0;}}
+	.ft ul li.adress .link li a{font-size: 11px; color: #7e7e7e; border-left: 1px solid #e6e6e6;padding: 0 5px 0 4px; display: inline-block; vertical-align: top; height: 13px}
+	.ft ul li.adress .link li:first-child a{border-left:0; padding-left:0}
+	.ft ul li.mark{float:right;} */
+	
+	/* footer */
+	.ft { width: 100%; position:relative; }
+	.ft:before { content:""; display:block; width: 100%; height: 150px; 
+	background-color: #32374f; position:absolute; top: 0; left: 0; z-index:-1; }
+	.ft_wrap { width: 1200px; margin:0 auto;  position:relative; height:120px;  padding-top:30px;}
+	.ft ul:after, .ft ul li ul:after{content: ""; clear: both; overflow:hidden; display: block;}
+	.ft ul li{float: left; color: #666;}
+	.ft ul li.logo{margin-top:10px;}
+	.ft ul li.adress{margin-left: 40px; line-height:18px}
+	.ft ul li.adress .link{display: inline-block; margin:0; width:540px}
+	.ft ul li.adress .link li{float:left; margin:0 0 7px 0}
+	@media screen and (-webkit-min-device-pixel-ratio:0) { .footer ul li.adress .link li {margin:0;}}
+	.ft ul li.adress .link li a{font-size: 11px; color: #7e7e7e; border-left: 1px solid #e6e6e6;padding: 0 5px 0 4px; display: inline-block; vertical-align: top; height: 13px}
+	.ft ul li.adress .link li:first-child a{border-left:0; padding-left:0}
+	/*푸터 영역*/
+    </style>
+ 	<footer class="ft fix">
+		<ul class="ft_wrap">
+			<li class="logo"><img src="./img/logo_footer.png" alt="북코스모스"></li>
+			<li class="adress">
+				<ul class="link">
+					<li><a href="http://company.bookcosmos.com/sub/info.asp" target="_blank">회사소개</a></li>
+					<li><a href="/Sub/Board/Bodo.Asp">보도자료</a></li>
+					<li><a href="http://company.bookcosmos.com/sub/alliance.asp" target="_blank">제휴안내</a></li>
+					<li><a href="/sub/help/copyright.asp">저작권정책</a></li>
+					<li><a href="/sub/help/Publish.asp">출판사관계자께</a></li>
+					<li><a href="/sub/help/Privacypolicy.asp"><b>개인정보처리방침</b></a></li>
+				</ul>
+				<div class="txt">경기도 고양시 일산동구 중앙로 1322 일산 현대 아이스페이스 1601호 02)335-2222  FAX 070-4779-2323<br>
+				통신판매업 신고 : 제 409호 사업자등록번호 : 105-86-09858<br>
+				Copyright ⓒ bookcosmos.com All rights reserved.
+				</div>
+			</li>
+			<li class="mark"><img src="./img/footer_mark.png" alt="북코스모스"></li>
+		</ul>
+	</footer>
+
+</body></html>

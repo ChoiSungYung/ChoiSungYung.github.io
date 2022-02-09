@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>최성영의 포트폴리오</title>
+    <link rel="stylesheet" href="reset.css">
+    <script src = "https://code.jquery.com/jquery-latest.js"></script>
+    <script>
+        $(document).ready(function(){
+            var ht = $(window).height();
+            $(".nav_menu > li").click(function(){
+                var pos = parseInt($(this).attr("pos"));
+                var data = pos * ht;
+                $("body, html").not(":animated").animate({scrollTop : data + "px"}, 800);
+            })
+        })
+    </script>
+</head>
+<style>
+.hd_wrap {
+    width:100%; 
+    height:124px;
+    border-bottom:1px solid red;
+    position: fixed;
+    top: 0; 
+    left: 0;
+    background-color: aquamarine;
+    z-index:500;}
+.hd_wrap .inner {
+    clear:both;
+    width:1300px; 
+    height:124px; 
+    margin:0 auto; 
+    background-color: rgb(3, 149, 101);}
+.hd_wrap .inner .tnb{
+    height:40px; 
+    background-color: rgb(71, 163, 133);}
+.hd_wrap .inner .gnb{
+    height:84px; 
+    background-color: rgb(19, 105, 76);}
+#page1 .page_wrap {
+    width:100%;  
+    margin: 0; 
+    top:0; 
+    left:0; 
+    background-color: rgb(255, 130, 130);}
+.page_wrap .inner {
+    clear:both;
+    width:1300px; 
+    min-height:100vh;
+    margin:0 auto; }
+.page_wrap {
+    width:100%;  
+    margin: 0; 
+    top:0; 
+    left:0; }
+#page1.page_wrap  {
+    background-color: rgb(173, 97, 97);}
+#page1.page_wrap .inner {
+    background-color: rgb(170, 117, 148);
+    min-height:100vh;}
+#page2.page_wrap {
+    background-color: rgb(193, 255, 111);}
+#page2.page_wrap .inner {
+    background-color: rgb(120, 255, 102);
+    min-height:100vh;}
+#page3.page_wrap {
+    background-color: rgb(134, 142, 255);}
+#page3.page_wrap .inner {
+    background-color: rgb(77, 116, 153);}
+
+.ft_wrap {
+    width:100%; 
+    height:100px; 
+    position:relative;
+    bottom: 0; left: 0;
+    background-color: rgb(253, 255, 130);}
+.ft_wrap .inner {
+    clear:both;
+    width:1300px; 
+    height:100px; 
+    margin:0 auto; 
+    background-color: rgb(255, 198, 124);}
+#page1.page_wrap .inner{ margin-top: 125px;}
+#page1.page_wrap .inner .profile_box { padding-top:100px; width: 600px; margin:0 auto;}
+#page1.page_wrap .inner .profile_box img {border-radius: 51%; width:200px; float:left;  margin-right:100px;}
+#page1.page_wrap .inner .profile_box ul{ float:left; }
+.page_tit {padding-top:50px; font-size:25px; text-align:center;}
+.detail {font-size:26px; text-align:center;}
+
+
+.item_tit{font-size:18px; line-height:40px; border:1px solid black;}
+.item_con{font-size:18px; border:1px solid black;}
+
+.hd_wrap .inner .tnb > ul {height:100%; float:right;}
+.hd_wrap .inner .tnb > ul > li {height:100%; line-height:40px; float:left; font-size:18px; padding-left: 20px;}
+.hd_wrap .inner .gnb .logo {float:left; width:125px; height: 84px; padding-left:20px; padding-right:50px;}
+.hd_wrap .inner .gnb .logo img {width:100%; height:100%;}
+.hd_wrap .inner .gnb > ul {height:100%; float:left;}
+.hd_wrap .inner .gnb > ul > li {height:100%; width:200px; text-align:center; line-height:84px; float:left; font-size:18px; padding: 0 20px;}
+#quick {position:fixed; right:40px; top:50%; margin-top:-80px; z-index:9999;}
+
+.gal_fr { clear:both; width: 1200px; margin: 0 auto; }
+.gal_fr:after { content:""; display:block; clear: both; }
+.gal_fr li { width:300px; float:left; margin: 50px; position:relative; }
+.gal_fr li a { display:block; width:300px; height: auto; }
+.gal_fr li img { display:block; width: 300px; height: auto; }
+.gal_fr li a .gal_tit_fr { position:absolute; width: 100%; top:0px; left: 0; height: 100%; opacity:0; visibility: hidden; transition-duration:0.7s; color:#fff; text-align: center; }
+.gal_fr li a .gal_tit { line-height: 3; padding-top: 50px; }
+.gal_fr li a .gal_com { line-height:1.6; padding-top:20px; }
+.gal_fr li a:hover .gal_tit_fr { opacity: 1; visibility: visible; }
+
+.social_fr { clear:both; width: 1200px; margin: 0 auto; }
+.social_fr li { float:left; margin: 20px; }
+.social_fr li.mobile { display:none; }
+
+@media screen and (max-width:767px) {   /* 모바일의 실제 크기 : 767px 이하 */
+    .social_fr li:nth-child(4n) { clear:both; }
+    .social_fr li.mobile { display:block; }
+}
+</style>
+<body>
+<header class="hd_wrap">
+    <div class="inner">
+        <div class="tnb">
+            <ul class="top_menu">
+                <li>로그인</li>
+                <li>회원가입</li>
+            </ul>
+        </div>
+        <div class="gnb">
+            <div class="logo">
+                <img class="logo_img" src="logo.png" alt="">
+            </div>
+            <ul class="nav_menu">
+                <li>자기소개</li>
+                <li>전문능력</li>
+                <li>포트폴리오</li>
+                <li>Contect</li>
+            </ul>
+        </div>
+    </div>
+</header>
+
+<section class="page_wrap" id="page1">
+    <div class="inner">
+        <h2 class="page_tit">introduce</h2>
+        <div class="profile_box">
+            <img class="myphoto" src="profile.jpg"/>
+            <ul class="intro_fr">
+                <li class="item1">
+                    <span class="item_tit">이름:</span>
+                    <span class="item_con">최성영</span>
+                </li>
+                <li class="item2">
+                    <span class="item_tit">나이:</span>
+                    <span class="item_con">31살</span>
+                </li>
+                <li class="item3">
+                    <span class="item_tit">희망지역:</span>
+                    <span class="item_con">경기도 고양시 일산</span>
+                </li>
+                <li class="item4">
+                    <span class="item_tit">희망부서:</span>
+                    <span class="item_con">프론트엔드</span>
+                </li>
+                <li class="item5">
+                    <span class="item_tit">특징:</span>
+                    <span class="item_con">INTP</span>
+                </li>
+            </ul>
+        </div>
+        <script>
+            $(function(){
+                $(".intro_fr li").each(function(){
+                    $(this).find(".item_con").delay($(this).index()*500).fadeIn(1000);
+                });    
+            });    
+        </script>
+    </div>
+</section>
+<section class="page_wrap" id="page2">
+    <div class="inner">
+        <h2 class="page_tit">직무능력</h2>
+        <ul class="skill_fr">
+            <li class="skill" id="">프로젝트1</li>
+            <li class="skill" id="">프로젝트2</li>
+            <li class="skill" id="">프로젝트3</li>
+            <li class="skill" id="">프로젝트4</li>
+            <li class="skill" id="">프로젝트5</li>
+        </ul>
+    </div>
+</section>
+
+<section class="page_wrap" id="page3">
+    <div class="inner">
+        <h2 class="page_tit">포트폴리오 갤러리</h2>
+        <ul class="gal_fr">
+            <li class="item1">
+                <a href="gal.html#page1">
+                    <img src="https://picsum.photos/250/250" alt="">
+                    <div class="gal_tit_fr">
+                        <h3 class="gal_tit">웹프로젝트 제목1</h3>
+                        <p class="gal_com">유형 : 브랜드형</p>
+                    </div>
+                </a>
+            </li>
+            <li class="item2">
+                <a href="gal.html#page2">
+                    <img src="https://picsum.photos/250/251" alt="">
+                    <div class="gal_tit_fr">
+                        <h3 class="gal_tit">웹프로젝트 제목2</h3>
+                        <p class="gal_com">유형 : 기업형</p>
+                    </div>
+                </a>
+            </li>
+            <li class="item3">
+                <a href="gal.html#page3">
+                    <img src="https://picsum.photos/250/252" alt="">
+                    <div class="gal_tit_fr">
+                        <h3 class="gal_tit">웹프로젝트 제목3</h3>
+                        <p class="gal_com">유형 : 관공서형</p>
+                    </div>
+                </a>
+            </li>
+            <li class="item4">
+                <a href="gal.html#page4">
+                    <img src="https://picsum.photos/250/253" alt="">
+                    <div class="gal_tit_fr">
+                        <h3 class="gal_tit">웹프로젝트 제목4</h3>
+                        <p class="gal_com">유형 : 관공서형</p>
+                    </div>
+                </a>
+            </li>
+        </ul>
+        <h2 class="detail"><a href="gal.html">자세히 보기</a></h2>
+    </div>
+</section>
+<footer class="ft_wrap">
+    <div class="inner">
+
+    </div>
+</footer>
+<div id="quick">
+    <ul>
+        <li class="item1"><a href="#page1">자기소개</a></li>
+        <li class="item2"><a href="#page2">직무능력</a></li>
+        <li class="item3"><a href="#page3">포트폴리오</a></li>
+    </ul>
+</div>
+</body>
+</html>

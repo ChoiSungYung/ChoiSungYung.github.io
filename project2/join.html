@@ -1,0 +1,264 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>회원가입</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0, userscalable=no"/>
+<!-- 합쳐지고 최소화된 최신 CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+<!-- 부가적인 테마 -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+<!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/jquery-latest.js"></script>
+<link rel="stylesheet" href="./css/header.css" />
+<link rel="stylesheet" href="./css/common.css">
+
+<style>
+.tit { font-size:48px; text-align: center; }
+ul { list-style: none;}
+input { outline:0; border:0;  border-radius:0;  }
+.fr { clear:both; width:960px; margin:10px auto; margin-bottom:80px;    }
+.fr:after { content:""; display:block; clear:both; }
+.fr_com { text-align:center; line-height:2.4; color:deeppink; font-weight:bold; }
+.fr_tit { text-align:center; padding-top:1em; text-align:center; }
+.fr_list li { clear:both;  padding:15px;  }
+.fr_list li:first-child { border-radius:30px 30px 0px 0px; }
+.fr_list li:after { content:""; clear:both; display:block; }
+.lb { display:block;  width:200px; height:42px; line-height:42px; float:left; 
+padding-left:20px; color:#222; font-weight:bold;  }
+.lb.rep:before { content:"* "; color:deeppink; font-size:18px; }
+.lb_data { display:block;  height:42px; line-height:42px; float:left;  }
+.in_data { display:block; float:left; border:1px solid #333; width:400px; height:40px; line-height:40px; padding-left:20px; }
+.in_btn { display:block; height:40px; line-height:40px; width:130px; float:left; border-radius:22px; background:#333; color:#fff; margin-left:20px; 
+cursor:pointer; }
+.in_btn:hover { background-color:deepskyblue; }
+.fr_col {width: 100px; float: left;text-align: center;btn { clear:both;  }
+.fr_col .in_btn { clear:both;  }
+.fr_col.first .in_btn { float:right; margin-right:25px; }
+.fr_col.last .in_btn { float:left; margin-left:25px; }
+#frm1 { width:960px; margin:0 auto; }
+.indata { width:100%; line-height:40px; height:40px;   }
+.tit { font-size:48px; text-align: center; }
+
+</style>
+</head>
+<body>
+
+<body>
+<div class="container">
+	
+    
+	<style>
+	.tnb { float:right; }
+	.tnb li { float:left; margin-left:15px; height: 42px;  }
+	.tnb li a {display:block;height:42px;color: #303030;font-weight: 800; line-height: 42px;}
+	#gnb { clear:both; }
+	</style>
+	<header class="hd fix">
+        <a href="index.jsp"><img src="./img/logo.png" style="padding-top:20px; padding-bottom:20px"></a>
+        <nav class="tnb">
+        	<ul>
+					
+						<li><a href="login.jsp">로그인</a></li>
+						<li><a href="join.jsp">회원가입</a></li>
+
+					
+        	</ul>
+        </nav>
+		<nav class="navbar navbar-inverse navbar-static-top" id="gnb">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">메뉴</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">
+                <li class="active"><a href="index.jsp">홈</a></li>
+                <li><a href="company.jsp">회사소개</a></li>
+                <li><a href="contact.jsp">제휴신청</a></li>
+                <li><a href="GetProductListCtrl" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">상품보기</a></li>
+                <li><a href="GetBoardListCtrl2">회원참여게시판</a></li>
+                <li><a href="GetInformListCtrl2">공지사항</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+	</header>
+	<div class="content">	
+		<section class="content fix" style="background-color: #f1f1f1; padding:30px;">
+		<h2 class="tit">회원 가입</h2>
+		<form action="JoinCtrl" class="frm" method="post" id="frm1" name="joinform" onsubmit="return joinCheck(this)">
+		<p class="fr_com">* 항목은 필수 입력 항목입니다.</p>
+		<ul class="fr_list">
+			<li>
+				<label for="m_id" class="lb rep">아이디</label>
+				<span class="lb_data">
+					<input type="text" name="cusid" id="cusid" placeholder="8~12 문자 및 숫자로 입력" maxlength="12" class="in_data" required autofocus />
+					<a class="in_btn" id="idckbtn" target="_blank" href="" style="text-align:center; ">ID중복 확인</a>
+					<input type="hidden" value="null" name="idck" id="idck" />
+					<script>
+					$(function(){
+						$("#cusid").keyup(function(){
+							$("#idckbtn").attr("href", "DupCtrl?cusid="+$(this).val())
+						});
+					});
+					</script>
+				</span>
+			</li>
+			<li>
+				<label for="m_pw" class="lb  rep">비밀번호</label>
+				<span class="lb_data">
+					<input type="password" name="cuspw" id="cuspw" placeholder="영문, 숫자를 반드시 포함할 것"  class="in_data" required />
+				</span>
+			</li>
+			<li>
+				<label for="m_pw2" class="lb rep">비밀번호 확인</label>
+				<span class="lb_data">
+					<input type="password" name="cuspw2" id="cuspw2" placeholder="영문, 숫자를 반드시 포함할 것" class="in_data" required />
+				</span>
+			</li>
+			<li>
+				<label for="name" class="lb rep">이름</label>
+				<span class="lb_data">
+					<input type="text" name="cusname" id="cusname" placeholder="한글 이름 입력" class="in_data" required />
+				</span>
+			</li>
+			<li>
+				<label for="email" class="lb rep">이메일</label>
+				<span class="lb_data">
+					<input type="text" name="cusemail" id="cusemail" placeholder="@를 포함하여 입력" class="in_data" required />
+					<!--  <input type="button" value="이메일중복확인" onclick="emailCheck()" class="in_btn"/> -->
+				</span>
+			</li>
+			<li>
+				<label for="tel" class="lb rep">전화번호</label>
+				<span class="lb_data">
+					<input type="text" name="custel" id="custel" placeholder="-를 제외하여 입력" class="in_data" required />
+				</span>
+			</li>
+			<li><label for="zipcode" class="lb">우편번호</label>
+				  <span class="lb_data">
+				  		<input type="text" name="zipcode" id="zipcode" class="in_data" />
+				  		<input type="button" value="주소찾기" onclick="findAddr()" class="in_btn"/>	
+				  </span>
+			</li>
+			<li>
+			    <label for="address1" class="lb">주소</label>
+				<span class="lb_data">
+					<input type="text" name="addr1" id="addr1" class="in_data" />
+				</span>
+			</li>
+			<li>
+				<label for="address2" class="lb">상세주소</label>
+				<span class="lb_data">
+					<input type="text" name="addr2" id="addr2" class="in_data" />
+				</span>
+			</li>
+			<li>
+				<span class="fr_col first">
+					<input type="submit" value="회원가입"  class="btn btn-default"/>
+				</span>
+				<span class="fr_col last">
+					<input type="reset" value="취소" class="btn btn-default"/>
+				</span>
+			</li>
+		</ul>
+		</form>
+		</section>
+</div>
+</div>
+	<!-- 회원가입시 바뀐 형식의 주소 및 우편번호 취급 처리 스크립트 -->
+    <script>
+       //다음카카오의 주소 API이용
+        function findAddr(){
+            new daum.Postcode({
+                oncomplete: function(data) {
+                    console.log(data);                   
+                    var roadAddr = data.roadAddress; // 도로명 주소 변수
+                    var jibunAddr = data.jibunAddress; // 지번 주소 변수
+                    // 우편번호와 주소 정보를 해당 필드에 넣는다.
+                    document.getElementById('zipcode').value = data.zonecode;
+                    if(roadAddr !== ''){
+                        document.getElementById("addr1").value = roadAddr;
+                    } 
+                    else if(jibunAddr !== ''){
+                        document.getElementById("addr1").value = jibunAddr;
+                    }
+                }
+            }).open();
+        }
+    </script>
+    <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+    
+	<!-- 아이디 중복 체크 및 유효성 검증 체크 스크립트 -->
+	<script>
+	function joinCheck(f){
+		if(f.cuspw.value!=f.cuspw2.value) {
+			alert("비밀번호와 비밀번호 확인이 서로 다릅니다.");
+			return false;
+		}
+	}
+	</script>
+		
+					
+    <style>    
+    /* .ft{clear:both; width:100%; background-color:#cbcbcb}
+    .ft:before { content:""; display:block; width: 100%; height: 48px; 
+	.ft .ft_container{margin:auto; width:1000px; height:140px; padding:20px 0px; padding-bottom:20px; position:relative; min-height:100%;}
+	.ft ul:after, .ft ul li ul:after{content: ""; clear: both; overflow:hidden; display: block;}
+	.ft ul li{float: left; color: #666;}
+	.ft ul li.logo{margin-top:10px;}
+	.ft ul li.adress{margin-left: 40px; line-height:18px}
+	.ft ul li.adress .link{display: inline-block; margin:0; width:540px}
+	.ft ul li.adress .link li{float:left; margin:0 0 7px 0}
+	@media screen and (-webkit-min-device-pixel-ratio:0) { .footer ul li.adress .link li {margin:0;}}
+	.ft ul li.adress .link li a{font-size: 11px; color: #7e7e7e; border-left: 1px solid #e6e6e6;padding: 0 5px 0 4px; display: inline-block; vertical-align: top; height: 13px}
+	.ft ul li.adress .link li:first-child a{border-left:0; padding-left:0}
+	.ft ul li.mark{float:right;} */
+	
+	/* footer */
+	.ft { width: 100%; position:relative; }
+	.ft:before { content:""; display:block; width: 100%; height: 150px; 
+	background-color: #32374f; position:absolute; top: 0; left: 0; z-index:-1; }
+	.ft_wrap { width: 1200px; margin:0 auto;  position:relative; height:120px;  padding-top:30px;}
+	.ft ul:after, .ft ul li ul:after{content: ""; clear: both; overflow:hidden; display: block;}
+	.ft ul li{float: left; color: #666;}
+	.ft ul li.logo{margin-top:10px;}
+	.ft ul li.adress{margin-left: 40px; line-height:18px}
+	.ft ul li.adress .link{display: inline-block; margin:0; width:540px}
+	.ft ul li.adress .link li{float:left; margin:0 0 7px 0}
+	@media screen and (-webkit-min-device-pixel-ratio:0) { .footer ul li.adress .link li {margin:0;}}
+	.ft ul li.adress .link li a{font-size: 11px; color: #7e7e7e; border-left: 1px solid #e6e6e6;padding: 0 5px 0 4px; display: inline-block; vertical-align: top; height: 13px}
+	.ft ul li.adress .link li:first-child a{border-left:0; padding-left:0}
+	/*푸터 영역*/
+    </style>
+ 	<footer class="ft fix">
+		<ul class="ft_wrap">
+			<li class="logo"><img src="./img/logo_footer.png" alt="북코스모스"></li>
+			<li class="adress">
+				<ul class="link">
+					<li><a href="http://company.bookcosmos.com/sub/info.asp" target="_blank">회사소개</a></li>
+					<li><a href="/Sub/Board/Bodo.Asp">보도자료</a></li>
+					<li><a href="http://company.bookcosmos.com/sub/alliance.asp" target="_blank">제휴안내</a></li>
+					<li><a href="/sub/help/copyright.asp">저작권정책</a></li>
+					<li><a href="/sub/help/Publish.asp">출판사관계자께</a></li>
+					<li><a href="/sub/help/Privacypolicy.asp"><b>개인정보처리방침</b></a></li>
+				</ul>
+				<div class="txt">경기도 고양시 일산동구 중앙로 1322 일산 현대 아이스페이스 1601호 02)335-2222  FAX 070-4779-2323<br>
+				통신판매업 신고 : 제 409호 사업자등록번호 : 105-86-09858<br>
+				Copyright ⓒ bookcosmos.com All rights reserved.
+				</div>
+			</li>
+			<li class="mark"><img src="./img/footer_mark.png" alt="북코스모스"></li>
+		</ul>
+	</footer>
+</body>
+</html>

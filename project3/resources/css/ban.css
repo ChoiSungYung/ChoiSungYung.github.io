@@ -1,0 +1,71 @@
+.vs {clear:both;width:100%;max-height: 700px;overflow:hidden;} /* width:1000px; */
+.vs .img_box { width: 400%; }  /* width:4000px; */
+.vs .img_box li { width: 25%; float:left; position:relative; } /* width:1000px; */
+.vs .img_box li .vs_img { display:block; width: 100%; height:auto;   object-fit: cover;}
+.vs .tit_box { width: 100%; height:100%; position:absolute; top: 0; left: 0;
+z-index:20; }
+.vs_tit {  font-family:'TTTogether'; font-size:80px; font-weight:400; text-shadow:2px 2px 2px #333; padding-left: 200px; color:#fff; font-size:40px; padding-top: 120px; }
+.vs_com { padding-left: 200px; color:#fff; font-size:18px; padding-top: 40px; }
+.more { margin-left: 200px; color:#fff; font-size:18px; display:block; 
+width: 120px; height: 40px; line-height: 40px; text-align:center; 
+border-radius:24px; background:rgba(45,45,45,0.75); margin-top: 50px; }
+
+
+/* 메인 비주얼 */
+#ms_visual  {width:100%;text-align:center;position:relative;z-index:1;top:0;}
+.main_visual {overflow:hidden;position:relative;min-width:1200px;height:859px;}
+.vs .slick-slide {position: relative;}
+.vs .titlep{position: absolute; top:35%; left:50%; transform: translate(-50%, -50%); font-family:'TTTogether'; font-weight: 100; font-size:80px; color:#fff; padding:0; text-shadow: 1px 1px 1px #000; width:100%; text-align: center;}
+.vs .titlep span{font-family:'NotokrB'; font-size:55px; }
+.vs .imgName{position: absolute; bottom:20%; right:20%; font-size:20px; color:#fff; text-shadow:1px 1px 1px #000; font-family:'NotokrR'; padding-left:40px; box-sizing: border-box; display: inline-block; background:url("/ntour/images/main/bannerIcon1.png") left center no-repeat;}
+.vs .slick-dots{position: absolute; bottom:25%; left:50%; transform: translate(-50%, 0);}
+.vs .slick-dots li{display: inline-block; margin:0 5px;}
+.vs .slick-dots li button{width:8px; height:8px; border-radius: 50%; border:none; font-size:0; transition: all 0.1s ease-in-out; background-color:#fff; box-sizing:border-box;}
+.vs .slick-dots li button:focus{border:2px solid #000;}
+.vs .slick-dots li.slick-active button{background-color: transparent; border:5px solid #fff; box-sizing: content-box;}
+
+
+/* 메인 검색 */
+#main_srch {position:absolute;top: 300px;left:50%;margin-left:-335px;width:670px;text-align:center;z-index:5;}
+#main_srch .txt2 {margin-top:-15px;color:#fff;font-size:35px;text-shadow:1px 1px 10px #000;letter-spacing: -0.1em;}
+#main_srch .main_srch_box {margin-top:30px;padding:5px;background-color:#f42148;background:linear-gradient(0.25turn, #f42148, #07bcff);}
+#main_srch .main_srch_box > .inner {position:relative;padding-right:77px;width:660px;height:65px;box-sizing:border-box;background-color:#fff;text-align:left;}
+#main_srch .main_srch_box input[type="text"] {padding:0 30px;width:100%;height:100%;font-size:20px;box-sizing:border-box;border:0;}
+#main_srch .main_srch_box input[type="text"]::placeholder {color:#000;}
+#main_srch .main_srch_box input[type="text"]:-ms-input-placeholder {color:#000;}
+#main_srch .main_srch_box input[type="text"]::-webkit-input-placeholder {color:#000;}
+#main_srch .main_srch_box .main_srch_btn {position:absolute;top:0;right:12px;width:65px;height:65px;background:url(../source/main_srch_btn.png) no-repeat center center;text-indent:-9999px;}
+#main_srch .popular_srch {margin-top:5px;height:25px;overflow:hidden;text-align:center;}
+#main_srch .popular_srch .ico {display:inline-block;height:19px;vertical-align:middle;}
+#main_srch .popular_srch a {display:inline-block;margin:0 7px;color:#fff;font-size:14px;font-weight:bold;vertical-align:middle;}
+
+.hide, .blind, table caption {width:1px;height:1px;overflow:hidden;position:absolute;top:-9999em;left:-9999em;display:block;text-indent:-9999em;font-size:0px;line-height:0;}
+
+
+@media screen and (max-width:1400px){
+    #main_srch {top: 300px;}
+
+}
+
+@media screen and (max-width:1200px){
+    #main_srch {top: 240px;}
+}
+
+@media screen and (max-width:1000px){
+    #main_srch {top: 220px;}
+}
+
+@media screen and (max-width:768px){
+    #main_srch {top: 200px;}
+
+}
+
+@media screen and (max-width:640px){
+    #main_srch {top: 180px;}
+
+}
+
+@media screen and (max-width:480px){
+    #main_srch {top: 160px;}
+
+}

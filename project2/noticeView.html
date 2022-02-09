@@ -1,0 +1,167 @@
+
+
+    
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>상품 페이지</title>
+<meta name="viewport" content="width=device-width; initial-scale=1.0, userscalable=no"/>
+<!-- 합쳐지고 최소화된 최신 CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+<!-- 부가적인 테마 -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+<!-- 북코스모스 테마 -->
+<link rel="stylesheet" type="text/css" href="./css/common.css">
+<link rel="stylesheet" href="./css/header.css">
+<!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+<script src="js/jquery-latest.js"></script>
+<link rel="stylesheet" href="datatables.min.css" />
+<script src="http://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="http://kenwheeler.github.io/slick/slick/slick.min.js"></script>
+<script src="datatables.min.js"></script>
+</head>
+<body>
+<div class="container">
+	
+    
+	<style>
+	.tnb { float:right; }
+	.tnb li { float:left; margin-left:15px; height: 42px;  }
+	.tnb li a {display:block;height:42px;color: #303030;font-weight: 800; line-height: 42px;}
+	#gnb { clear:both; }
+	</style>
+	<header class="hd fix">
+        <a href="index.jsp"><img src="./img/logo.png" style="padding-top:20px; padding-bottom:20px"></a>
+        <nav class="tnb">
+        	<ul>
+					
+							<li><span style="display: block; height: 42px; line-height: 42px; font-weight:bold;">최성영&nbsp;님</span></li>
+							<li><a href="MyPageCtrl?cusid=kenshin951">마이 페이지</a></li>
+							<li><a href="GetUserBasketListCtrl?cusid=kenshin951">장바구니</a></li>
+							<li><a href="GetUserPaymentListCtrl?cusid=kenshin951">구입내역</a></li>
+							<li><a href="LogoutCtrl">로그아웃</a></li>
+							<li><a href="OutCtrl">회원탈퇴</a></li>
+					
+        	</ul>
+        </nav>
+		<nav class="navbar navbar-inverse navbar-static-top" id="gnb">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">메뉴</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">
+                <li class="active"><a href="index.jsp">홈</a></li>
+                <li><a href="company.jsp">회사소개</a></li>
+                <li><a href="contact.jsp">제휴신청</a></li>
+                <li><a href="GetProductListCtrl" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">상품보기</a></li>
+                <li><a href="GetBoardListCtrl2">회원참여게시판</a></li>
+                <li><a href="GetInformListCtrl2">공지사항</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+	</header>
+	<div class="content fix">
+		<h2 class="tit">공지사항 보기</h2>
+			<table class="table">
+				<tr>
+					<th class="item1">번호</th>
+					<td class="item2">21</td>
+				</tr>
+				<tr>	
+					<th class="item1">제목</th>
+					<td class="item2">
+						<p>회원가입 관련</p>
+					</td>
+				</tr>	
+				<tr>
+					<th class="item1">내용</th>
+					<td class="item2">
+						<p>회원의 경우 상시 회원 참여 이벤트</p>
+					</td>
+				</tr>
+				<tr>
+					<th class="item1">작성자</th>
+					<td class="item2">관리자</td>
+				</tr>
+				<tr>	
+					<th class="item1">작성일</th>
+					<td class="item2">2021-12-27</td>
+				</tr>
+				<tr>	
+					<th class="item1">방문횟수</th>
+					<td class="item2">26</td>
+				</tr>
+			</table>
+			<!--  버튼 그룹 -->
+			<div class="btn-group">
+				<a href="GetInformListCtrl2" class="btn btn-default">목록</a>
+			</div>
+	</div>
+</div>
+		
+    <style>    
+    /* .ft{clear:both; width:100%; background-color:#cbcbcb}
+    .ft:before { content:""; display:block; width: 100%; height: 48px; 
+	.ft .ft_container{margin:auto; width:1000px; height:140px; padding:20px 0px; padding-bottom:20px; position:relative; min-height:100%;}
+	.ft ul:after, .ft ul li ul:after{content: ""; clear: both; overflow:hidden; display: block;}
+	.ft ul li{float: left; color: #666;}
+	.ft ul li.logo{margin-top:10px;}
+	.ft ul li.adress{margin-left: 40px; line-height:18px}
+	.ft ul li.adress .link{display: inline-block; margin:0; width:540px}
+	.ft ul li.adress .link li{float:left; margin:0 0 7px 0}
+	@media screen and (-webkit-min-device-pixel-ratio:0) { .footer ul li.adress .link li {margin:0;}}
+	.ft ul li.adress .link li a{font-size: 11px; color: #7e7e7e; border-left: 1px solid #e6e6e6;padding: 0 5px 0 4px; display: inline-block; vertical-align: top; height: 13px}
+	.ft ul li.adress .link li:first-child a{border-left:0; padding-left:0}
+	.ft ul li.mark{float:right;} */
+	
+	/* footer */
+	.ft { width: 100%; position:relative; }
+	.ft:before { content:""; display:block; width: 100%; height: 150px; 
+	background-color: #32374f; position:absolute; top: 0; left: 0; z-index:-1; }
+	.ft_wrap { width: 1200px; margin:0 auto;  position:relative; height:120px;  padding-top:30px;}
+	.ft ul:after, .ft ul li ul:after{content: ""; clear: both; overflow:hidden; display: block;}
+	.ft ul li{float: left; color: #666;}
+	.ft ul li.logo{margin-top:10px;}
+	.ft ul li.adress{margin-left: 40px; line-height:18px}
+	.ft ul li.adress .link{display: inline-block; margin:0; width:540px}
+	.ft ul li.adress .link li{float:left; margin:0 0 7px 0}
+	@media screen and (-webkit-min-device-pixel-ratio:0) { .footer ul li.adress .link li {margin:0;}}
+	.ft ul li.adress .link li a{font-size: 11px; color: #7e7e7e; border-left: 1px solid #e6e6e6;padding: 0 5px 0 4px; display: inline-block; vertical-align: top; height: 13px}
+	.ft ul li.adress .link li:first-child a{border-left:0; padding-left:0}
+	/*푸터 영역*/
+    </style>
+ 	<footer class="ft fix">
+		<ul class="ft_wrap">
+			<li class="logo"><img src="./img/logo_footer.png" alt="북코스모스"></li>
+			<li class="adress">
+				<ul class="link">
+					<li><a href="http://company.bookcosmos.com/sub/info.asp" target="_blank">회사소개</a></li>
+					<li><a href="/Sub/Board/Bodo.Asp">보도자료</a></li>
+					<li><a href="http://company.bookcosmos.com/sub/alliance.asp" target="_blank">제휴안내</a></li>
+					<li><a href="/sub/help/copyright.asp">저작권정책</a></li>
+					<li><a href="/sub/help/Publish.asp">출판사관계자께</a></li>
+					<li><a href="/sub/help/Privacypolicy.asp"><b>개인정보처리방침</b></a></li>
+				</ul>
+				<div class="txt">경기도 고양시 일산동구 중앙로 1322 일산 현대 아이스페이스 1601호 02)335-2222  FAX 070-4779-2323<br>
+				통신판매업 신고 : 제 409호 사업자등록번호 : 105-86-09858<br>
+				Copyright ⓒ bookcosmos.com All rights reserved.
+				</div>
+			</li>
+			<li class="mark"><img src="./img/footer_mark.png" alt="북코스모스"></li>
+		</ul>
+	</footer>
+</body>
+</html>

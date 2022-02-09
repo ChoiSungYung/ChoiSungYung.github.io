@@ -1,0 +1,330 @@
+
+
+
+
+    
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>회원 게시판 목록</title>
+<meta name="viewport" content="width=device-width; initial-scale=1.0, userscalable=no"/>
+<!-- 합쳐지고 최소화된 최신 CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+<!-- 부가적인 테마 -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+<!-- 북코스모스 테마 -->
+<link rel="stylesheet" type="text/css" href="./css/common.css">
+<link rel="stylesheet" href="./css/header.css">
+<!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+<script src="jquery-latest.js"></script>
+<link rel="stylesheet" href="datatables.min.css" />
+<script src="datatables.min.js"></script>
+<style>
+ul { list-style:none; }
+.logo { float:left; }
+.tnb { float:right; }
+.tnb li { float:left; margin-left:15px; height: 42px;  }
+.tnb li a { display:block; height:42px; line-height: 42px; }
+#gnb { clear:both; }
+.tit { font-size:48px; text-align: center; }
+.btn-default { color:#fff; background-image: linear-gradient(to bottom,#111 0,#222 100%); }
+.btn-default:hover { background-color:deepskyblue; }
+</style>
+</head>
+<body>
+<div class="container">
+	
+    
+	<style>
+	.tnb { float:right; }
+	.tnb li { float:left; margin-left:15px; height: 42px;  }
+	.tnb li a {display:block;height:42px;color: #303030;font-weight: 800; line-height: 42px;}
+	#gnb { clear:both; }
+	</style>
+	<header class="hd fix">
+        <a href="index.jsp"><img src="./img/logo.png" style="padding-top:20px; padding-bottom:20px"></a>
+        <nav class="tnb">
+        	<ul>
+					
+						<li><a href="login.jsp">로그인</a></li>
+						<li><a href="join.jsp">회원가입</a></li>
+
+					
+        	</ul>
+        </nav>
+		<nav class="navbar navbar-inverse navbar-static-top" id="gnb">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">메뉴</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">
+                <li class="active"><a href="index.jsp">홈</a></li>
+                <li><a href="company.jsp">회사소개</a></li>
+                <li><a href="contact.jsp">제휴신청</a></li>
+                <li><a href="GetProductListCtrl" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">상품보기</a></li>
+                <li><a href="GetBoardListCtrl2">회원참여게시판</a></li>
+                <li><a href="GetInformListCtrl2">공지사항</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+	</header>
+	<h2>게시판 목록</h2>
+	<div class="content">
+		<div class="writePosibleArea">			
+				
+		</div>
+		<div class="borad_area">
+			<table id="bList" class="table">
+				<thead>
+					<tr>
+						<th>글번호</th>
+						<th>제목</th>
+						<th>작성자</th>
+						<th>작성일</th>
+						<th>조회수</th>
+					</tr>
+				</thead>
+				<tbody>
+				
+				
+					<tr>
+						<td>10</td>
+						<td>
+		                    
+							<a href="GetBoardCtrl2?num=37&pageNum=1">s</a>
+						</td>
+						<td>admin</td>
+						<td>2022-01-04</td>
+						<td>12</td>
+					</tr>
+					
+				
+					<tr>
+						<td>9</td>
+						<td>
+		                    
+							<a href="GetBoardCtrl2?num=34&pageNum=1">여섯</a>
+						</td>
+						<td>admin</td>
+						<td>2022-01-03</td>
+						<td>6</td>
+					</tr>
+					
+				
+					<tr>
+						<td>8</td>
+						<td>
+		                    
+							<a href="GetBoardCtrl2?num=31&pageNum=1">다섯</a>
+						</td>
+						<td>admin</td>
+						<td>2022-01-03</td>
+						<td>0</td>
+					</tr>
+					
+				
+					<tr>
+						<td>7</td>
+						<td>
+		                    
+							<a href="GetBoardCtrl2?num=28&pageNum=1">넷</a>
+						</td>
+						<td>admin</td>
+						<td>2022-01-03</td>
+						<td>0</td>
+					</tr>
+					
+				
+					<tr>
+						<td>6</td>
+						<td>
+		                    
+							<a href="GetBoardCtrl2?num=25&pageNum=1">셋</a>
+						</td>
+						<td>admin</td>
+						<td>2022-01-03</td>
+						<td>1</td>
+					</tr>
+					
+				
+					<tr>
+						<td>5</td>
+						<td>
+		                    
+							<a href="GetBoardCtrl2?num=22&pageNum=1">둘</a>
+						</td>
+						<td>admin</td>
+						<td>2022-01-03</td>
+						<td>0</td>
+					</tr>
+					
+				
+					<tr>
+						<td>4</td>
+						<td>
+		                    
+							<a href="GetBoardCtrl2?num=19&pageNum=1">하나</a>
+						</td>
+						<td>admin</td>
+						<td>2022-01-03</td>
+						<td>0</td>
+					</tr>
+					
+				
+					<tr>
+						<td>3</td>
+						<td>
+		                    
+							<a href="GetBoardCtrl2?num=14&pageNum=1">s</a>
+						</td>
+						<td>admin</td>
+						<td>2022-01-03</td>
+						<td>2</td>
+					</tr>
+					
+				
+					<tr>
+						<td>2</td>
+						<td>
+		                    
+		                        
+		                            &nbsp;&nbsp; <!-- 답변글일경우 글 제목 앞에 공백을 준다. -->
+		                        
+		                        RE : 
+		                    
+							<a href="GetBoardCtrl2?num=15&pageNum=1">ddd</a>
+						</td>
+						<td></td>
+						<td>2022-01-03</td>
+						<td>4</td>
+					</tr>
+					
+				
+					<tr>
+						<td>1</td>
+						<td>
+		                    
+		                        
+		                            &nbsp;&nbsp; <!-- 답변글일경우 글 제목 앞에 공백을 준다. -->
+		                        
+		                            &nbsp;&nbsp; <!-- 답변글일경우 글 제목 앞에 공백을 준다. -->
+		                        
+		                        RE : 
+		                    
+							<a href="GetBoardCtrl2?num=16&pageNum=1">cc</a>
+						</td>
+						<td></td>
+						<td>2022-01-03</td>
+						<td>0</td>
+					</tr>
+					
+				
+				</tbody>
+			</table>
+		<script>
+/* 		$(function(){
+			$("#custom_tb").DataTable();		//#custom_tb는 반드시 table 태그일 것.
+		}); */
+		</script>
+		</div>
+	    <div id="pageForm">
+	        
+	        
+	        
+	            
+	                1&nbsp;
+	            
+	            
+	        
+	            
+	            
+	                <a href='GetBoardListCtrl2?page=2'>2&nbsp;</a>
+	            
+	        
+	        
+	        
+	    </div>
+	    
+	    <!--  검색 부분 -->
+	    <br>
+	    <div id="searchForm">
+	        <form>
+	            <select name="opt">
+	                <option value="0">제목</option>
+	                <option value="1">내용</option>
+	                <option value="2">제목+내용</option>
+	                <option value="3">글쓴이</option>
+	            </select>
+	            <input type="text" size="20" name="condition"/>&nbsp;
+	            <input type="submit" value="검색" class="btn btn-primary"/>
+	        </form>    
+	    </div>
+	</div>
+</div>	
+	
+    <style>    
+    /* .ft{clear:both; width:100%; background-color:#cbcbcb}
+    .ft:before { content:""; display:block; width: 100%; height: 48px; 
+	.ft .ft_container{margin:auto; width:1000px; height:140px; padding:20px 0px; padding-bottom:20px; position:relative; min-height:100%;}
+	.ft ul:after, .ft ul li ul:after{content: ""; clear: both; overflow:hidden; display: block;}
+	.ft ul li{float: left; color: #666;}
+	.ft ul li.logo{margin-top:10px;}
+	.ft ul li.adress{margin-left: 40px; line-height:18px}
+	.ft ul li.adress .link{display: inline-block; margin:0; width:540px}
+	.ft ul li.adress .link li{float:left; margin:0 0 7px 0}
+	@media screen and (-webkit-min-device-pixel-ratio:0) { .footer ul li.adress .link li {margin:0;}}
+	.ft ul li.adress .link li a{font-size: 11px; color: #7e7e7e; border-left: 1px solid #e6e6e6;padding: 0 5px 0 4px; display: inline-block; vertical-align: top; height: 13px}
+	.ft ul li.adress .link li:first-child a{border-left:0; padding-left:0}
+	.ft ul li.mark{float:right;} */
+	
+	/* footer */
+	.ft { width: 100%; position:relative; }
+	.ft:before { content:""; display:block; width: 100%; height: 150px; 
+	background-color: #32374f; position:absolute; top: 0; left: 0; z-index:-1; }
+	.ft_wrap { width: 1200px; margin:0 auto;  position:relative; height:120px;  padding-top:30px;}
+	.ft ul:after, .ft ul li ul:after{content: ""; clear: both; overflow:hidden; display: block;}
+	.ft ul li{float: left; color: #666;}
+	.ft ul li.logo{margin-top:10px;}
+	.ft ul li.adress{margin-left: 40px; line-height:18px}
+	.ft ul li.adress .link{display: inline-block; margin:0; width:540px}
+	.ft ul li.adress .link li{float:left; margin:0 0 7px 0}
+	@media screen and (-webkit-min-device-pixel-ratio:0) { .footer ul li.adress .link li {margin:0;}}
+	.ft ul li.adress .link li a{font-size: 11px; color: #7e7e7e; border-left: 1px solid #e6e6e6;padding: 0 5px 0 4px; display: inline-block; vertical-align: top; height: 13px}
+	.ft ul li.adress .link li:first-child a{border-left:0; padding-left:0}
+	/*푸터 영역*/
+    </style>
+ 	<footer class="ft fix">
+		<ul class="ft_wrap">
+			<li class="logo"><img src="./img/logo_footer.png" alt="북코스모스"></li>
+			<li class="adress">
+				<ul class="link">
+					<li><a href="http://company.bookcosmos.com/sub/info.asp" target="_blank">회사소개</a></li>
+					<li><a href="/Sub/Board/Bodo.Asp">보도자료</a></li>
+					<li><a href="http://company.bookcosmos.com/sub/alliance.asp" target="_blank">제휴안내</a></li>
+					<li><a href="/sub/help/copyright.asp">저작권정책</a></li>
+					<li><a href="/sub/help/Publish.asp">출판사관계자께</a></li>
+					<li><a href="/sub/help/Privacypolicy.asp"><b>개인정보처리방침</b></a></li>
+				</ul>
+				<div class="txt">경기도 고양시 일산동구 중앙로 1322 일산 현대 아이스페이스 1601호 02)335-2222  FAX 070-4779-2323<br>
+				통신판매업 신고 : 제 409호 사업자등록번호 : 105-86-09858<br>
+				Copyright ⓒ bookcosmos.com All rights reserved.
+				</div>
+			</li>
+			<li class="mark"><img src="./img/footer_mark.png" alt="북코스모스"></li>
+		</ul>
+	</footer>
+</body>
+</html>

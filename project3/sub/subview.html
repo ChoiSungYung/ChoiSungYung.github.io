@@ -1,0 +1,682 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	
+
+
+
+
+
+<meta charset="UTF-8">
+<title>포항 관광문화</title> 
+<!-- 뷰포트 -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- 메타포 설정 -->
+<meta property= "title" content="포항 관광문화 홈페이지">
+<meta property= "keywords" content="포항관광문화, 포항시청 관광문화, 포항시 여행정보">
+<meta property= "description" content= "포항 관광문화 홈페이지">
+<!-- 파비콘 설정 -->
+<link rel= "shortcut icon" href="/include/source/pohang.ico">
+<!-- 오픈그래프 설정 -->
+<meta property="og:title" content="포항 관광문화 웹어플리케이션">
+<meta property="og:type" content="website">
+<meta property="og:url" content="http://tour.pohang.go.kr">
+<meta property="og:description" content="포항 관광문화, 포항12경, 포항5미, 포항5락">
+<meta property="og:image" content="/source/site_thumb.jpg" />
+<!-- 폰트 설정 -->
+<link href="http://fonts.googleapis.com/earlyaccess/notosanskr.css" rel="stylesheet" type="text/css">
+<!-- 필수 API 로딩 -->
+<script src="https://code.jquery.com/jquery-latest.js"></script>
+<script src="../resources/js/ban.js"></script>
+<script src="../resources/js/jquery.js"></script>
+<script src="/include/datatables.min.js"></script>
+<!-- 외부 스타일 로딩 -->
+<link href="/include/datatables.min.css" rel="stylesheet">
+<!--  
+<link rel="stylesheet" href="../resources/css/fonts.css"/>
+<link rel="stylesheet" href="../resources/css/grid.css"/>
+<link rel="stylesheet" href="../resources/css/ban.css"/>-->
+<!-- 새로운 스타일-->
+<link rel="stylesheet" href="../resources/css/style.css"/>
+
+</head>
+<body>
+<div class="wrap">
+
+
+<header class="hd fix" id="header">
+            <h1 class="logo">
+                <a href="/">포항시 문화관광</a>
+            </h1>
+            <div class="hd_top">
+                <div class="inner">
+                    <div class="hdt_right">
+                        <ul>
+                       		
+	                            <li class="login_btn"><a href="/member/login.do">로그인</a></li>
+	                            <li class="login_btn"><a href="/member/join.do">회원가입</a></li>
+							
+							
+							
+                            <li class="lang">
+                                <button type="button" class="lang_select_tit" title="언어선택 리스트 열기">Language</button> 
+                                <ul class="lang_list"> 
+                                    <li><a  href="https://www.pohang.go.kr/eng/index.do" target="_blank" title="새 창으로 열림">ENGLISH</a></li> 
+                                    <li><a  href="https://www.pohang.go.kr/russian/index.do" target="_blank" title="새 창으로 열림">RUSSIAN</a></li> 
+                                    <li><a  href="https://www.pohang.go.kr/china/index.do" target="_blank" title="새 창으로 열림">中文</a></li> 
+                                    <li><a  href="https://www.pohang.go.kr/japan/index.do" target="_blank" title="새 창으로 열림">日本語</a></li> 
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+                <div class="gnb" id="gnb">
+                    <div class="inner">
+                        <div class="gnb_list_wrap">
+                            <ul class="gnb_list">
+                                <li class="dep1">
+                                    <a class="dep1_txt" href="/sub/subview.do">퐝타스틱</a>
+                                    <div class="dep1_sub_menu sub_menu01">
+                                        <div class="left">
+                                            <div class="txt_box">
+                                                <strong class="up_dep1_txt">퐝타스틱</strong>
+                                                <p class="txt">Visit Pohang</p>
+                                            </div>
+                                        </div>
+                                        <div class="right">
+                                            <ul class="dep2">
+                                                <li class="fixed in_dep3">
+                                                    <a href="/sub/subview.do" class="dep2_txt   m_in_dep3" target="_self">포항12경</a>
+                                                    <ul class="dep3">
+                                                        <li>
+                                                            <a href="/sub/subview.do" class="dep3_txt" target="_self">
+                                                                <span class="img">
+                                                                    <img src="/include/source/pohang/dep3_txt_tour12_img01.jpg" alt="">
+                                                                </span>
+                                                                <span class="txt">호미곶일출</span>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/sub/subview.do" class="dep3_txt" target="_self">
+                                                                <span class="img">
+                                                                    <img src="/include/source/pohang/dep3_txt_tour12_img02.jpg" alt="">
+                                                                </span>
+                                                                <span class="txt">내연산12폭포비경</span>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/sub/subview.do" class="dep3_txt" target="_self">
+                                                                <span class="img">
+                                                                    <img src="/include/source/pohang/dep3_txt_tour12_img03.jpg" alt="">
+                                                                </span>
+                                                                <span class="txt">운제산오어사사계</span>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/sub/subview.do" class="dep3_txt" target="_self">
+                                                                <span class="img">
+                                                                    <img src="/include/source/pohang/dep3_txt_tour12_img04.jpg" alt="">
+                                                                </span>
+                                                                <span class="txt">호미반도둘레길</span>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/sub/subview.do" class="dep3_txt" target="_self">
+                                                                <span class="img">
+                                                                    <img src="/include/source/pohang/dep3_txt_tour12_img05.jpg" alt="">
+                                                                </span>
+                                                                <span class="txt">영일대&포스코야경</span>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/sub/subview.do" class="dep3_txt" target="_self">
+                                                                <span class="img">
+                                                                    <img src="/include/source/pohang/dep3_txt_tour12_img06.jpg" alt="">
+                                                                </span>
+                                                                <span class="txt">포항운하</span>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/sub/subview.do" class="dep3_txt" target="_self">
+                                                                <span class="img">
+                                                                    <img src="/include/source/pohang/dep3_txt_tour12_img07.jpg" alt="">
+                                                                </span>
+                                                                <span class="txt">경상북도수목원사계</span>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/sub/subview.do" class="dep3_txt" target="_self">
+                                                                <span class="img">
+                                                                    <img src="/include/source/pohang/dep3_txt_tour12_img08.jpg" alt="">
+                                                                </span>
+                                                                <span class="txt">연오랑세오녀테마공원</span>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/sub/subview.do" class="dep3_txt" target="_self">
+                                                                <span class="img">
+                                                                    <img src="/include/source/pohang/dep3_txt_tour12_img09.jpg" alt="">
+                                                                </span>
+                                                                <span class="txt">철길숲&불의정원</span>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/sub/subview.do" class="dep3_txt" target="_self">
+                                                                <span class="img">
+                                                                    <img src="/include/source/pohang/dep3_txt_tour12_img10.jpg" alt="">
+                                                                </span>
+                                                                <span class="txt">죽장하옥계곡사계</span>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/sub/subview.do" class="dep3_txt" target="_self">
+                                                                <span class="img">
+                                                                    <img src="/include/source/pohang/dep3_txt_tour12_img11.jpg" alt="">
+                                                                </span>
+                                                                <span class="txt">장기읍성&유배문화체험촌</span>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/sub/subview.do" class="dep3_txt" target="_self">
+                                                                <span class="img">
+                                                                    <img src="/include/source/pohang/dep3_txt_tour12_img12.jpg" alt="">
+                                                                </span>
+                                                                <span class="txt">구룡포일본인가옥거리</span>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                            <ul class="dep2">
+                                                <li class="fixed in_dep3">
+                                                    <a href="/sub/subview.do" class="dep2_txt   m_in_dep3" target="_self">오미(5味)</a>
+                                                    <ul class="dep3">
+                                                        <li>
+                                                            <a href="/sub/subview.do" class="dep3_txt" target="_self">
+                                                                <span class="img">
+                                                                    <img src="/include/source/pohang/dep3_txt_eat5_img01.jpg" alt="">
+                                                                </span>
+                                                                <span class="txt">포항 물회</span>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/sub/subview.do" class="dep3_txt" target="_self">
+                                                                <span class="img">
+                                                                    <img src="/include/source/pohang/dep3_txt_eat5_img02.jpg"" alt="">
+                                                                </span>
+                                                                <span class="txt">구룡포 과메기</span>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/sub/subview.do" class="dep3_txt" target="_self">
+                                                                <span class="img">
+                                                                    <img src="/include/source/pohang/dep3_txt_eat5_img03.jpg"" alt="">
+                                                                </span>
+                                                                <span class="txt">구룡포 대게</span>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/sub/subview.do" class="dep3_txt" target="_self">
+                                                                <span class="img">
+                                                                    <img src="/include/source/pohang/dep3_txt_eat5_img04.jpg"" alt="">
+                                                                </span>
+                                                                <span class="txt">호미곶 돌문어</span>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/sub/subview.do" class="dep3_txt" target="_self">
+                                                                <span class="img">
+                                                                    <img src="/include/source/pohang/dep3_txt_eat5_img05.jpg"" alt="">
+                                                                </span>
+                                                                <span class="txt">장기 산딸기</span>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                            <ul class="dep2">
+                                                <li class="fixed in_dep3">
+                                                    <a href="/sub/subview.do" class="dep2_txt   m_in_dep3" target="_self">오락(5樂)</a>
+                                                    <ul class="dep3">
+                                                        <li>
+                                                            <a href="/sub/subview.do" class="dep3_txt" target="_self">
+                                                                <span class="img">
+                                                                    <img src="/include/source/pohang/dep3_txt_festival5_img01.jpg" alt="">
+                                                                </span>
+                                                                <span class="txt">포항국제불빛축제</span>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/sub/subview.do" class="dep3_txt" target="_self">
+                                                                <span class="img">
+                                                                    <img src="/include/source/pohang/dep3_txt_festival5_img02.jpg" alt="">
+                                                                </span>
+                                                                <span class="txt">호미곶 한민족 해맞이축제</span>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/sub/subview.do" class="dep3_txt" target="_self">
+                                                                <span class="img">
+                                                                    <img src="/include/source/pohang/dep3_txt_festival5_img03.jpg" alt="">
+                                                                </span>
+                                                                <span class="txt">칠포 재즈페스티벌</span>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/sub/subview.do" class="dep3_txt" target="_self">
+                                                                <span class="img">
+                                                                    <img src="/include/source/pohang/dep3_txt_festival5_img04.jpg" alt="">
+                                                                </span>
+                                                                <span class="txt">호미반도 해안 둘레길 걷기</span>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/sub/subview.do" class="dep3_txt" target="_self">
+                                                                <span class="img">
+                                                                    <img src="/include/source/pohang/dep3_txt_festival5_img05.jpg" alt="">
+                                                                </span>
+                                                                <span class="txt">스틸아트페스티벌</span>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                
+                                </li>
+                                <li class="dep1">
+                                    <a class="dep1_txt" href="/sub/subview.do">테마관광</a>
+                                    <div class="dep1_sub_menu sub_menu02">
+                                        <div class="left">
+                                            <div class="txt_box">
+                                                <strong class="up_dep1_txt">테마관광</strong>
+                                                <p class="txt">Visit Pohang</p>
+                                            </div>
+                                        </div>
+                                        <div class="right">
+                                            <ul class="dep2">
+                                                <li class="in_dep3">
+                                                    <a href="/sub/subview.do" class="dep2_txt   m_in_dep3" target="_self">자연</a>
+                                                    <ul class="dep3">
+                                                        <ul class="dep3">
+                                                            <li><a href="/sub/subview.do" class="dep3_txt  " target="_self"> 산·수목원</a></li>
+                                                            <li><a href="/sub/subview.do" class="dep3_txt  " target="_self"> 해수욕장</a></li>
+                                                            <li><a href="/sub/subview.do" class="dep3_txt  " target="_self"> 기타</a></li>
+                                                        </ul>
+                                                    </ul>
+                                                </li>
+                                                <li class="in_dep3">
+                                                    <a href="/sub/subview.do" class="dep2_txt   m_in_dep3" target="_self">역사</a>
+                                                    <ul class="dep3">
+                                                        <ul class="dep3">
+                                                            <li><a href="/sub/subview.do" class="dep3_txt  " target="_self"> 사찰</a></li>
+                                                            <li><a href="/sub/subview.do" class="dep3_txt  " target="_self"> 기념관</a></li>
+                                                            <li><a href="/sub/subview.do" class="dep3_txt  " target="_self"> 기타</a></li>
+                                                        </ul>
+                                                    </ul>
+                                                </li>                                                <li class="in_dep3">
+                                                    <a href="/sub/subview.do" class="dep2_txt   m_in_dep3" target="_self">휴양</a>
+                                                    <ul class="dep3">
+                                                        <ul class="dep3">
+                                                            <li><a href="/sub/subview.do" class="dep3_txt  " target="_self"> 공원</a></li>
+                                                            <li><a href="/sub/subview.do" class="dep3_txt  " target="_self"> 휴양지</a></li>
+                                                            <li><a href="/sub/subview.do" class="dep3_txt  " target="_self"> 둘레길</a></li>
+                                                        </ul>
+                                                    </ul>
+                                                </li>                                                <li class="in_dep3">
+                                                    <a href="/sub/subview.do" class="dep2_txt   m_in_dep3" target="_self">체험</a>
+                                                    <ul class="dep3">
+                                                        <ul class="dep3">
+                                                            <li><a href="/sub/subview.do" class="dep3_txt  " target="_self"> 전통문화</a></li>
+                                                            <li><a href="/sub/subview.do" class="dep3_txt  " target="_self"> 온천</a></li>
+                                                            <li><a href="/sub/subview.do" class="dep3_txt  " target="_self"> 체험관</a></li>
+                                                        </ul>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="dep1">
+                                    <a class="dep1_txt" href="/sub/subview.do">문화예술</a>
+                                    <div class="dep1_sub_menu sub_menu03">
+                                        <div class="left">
+                                            <div class="txt_box">
+                                                <strong class="up_dep1_txt">문화예술</strong>
+                                                <p class="txt">Visit Pohang</p>
+                                            </div>
+                                        </div>
+                                        <div class="right">
+                                            <ul class="dep2">
+                                                <li class="in_dep3">
+                                                    <a href="/sub/subview.do" class="dep2_txt   m_in_dep3" target="_self">문화관광행사</a>
+                                                    <ul class="dep3">
+                                                        <ul class="dep3">
+                                                            <li><a href="/sub/subview.do" class="dep3_txt  " target="_self"> 축제행사</a></li>
+                                                            <li><a href="/sub/subview.do" class="dep3_txt  " target="_self"> 공연</a></li>
+                                                            <li><a href="/sub/subview.do" class="dep3_txt  " target="_self"> 전시</a></li>
+                                                            <li><a href="/sub/subview.do" class="dep3_txt  " target="_self"> 기타</a></li>
+                                                        </ul>
+                                                    </ul>
+                                                </li>
+                                                <li class="in_dep3">
+                                                    <a href="/sub/subview.do" class="dep2_txt   m_in_dep3" target="_self">문화캘린더</a>
+                                                </li>                                                <li class="in_dep3">
+                                                    <a href="/sub/subview.do" class="dep2_txt   m_in_dep3" target="_self">문화공간</a>
+                                                    <ul class="dep3">
+                                                        <ul class="dep3">
+                                                            <li><a href="/sub/subview.do" class="dep3_txt  " target="_self"> 전시관</a></li>
+                                                            <li><a href="/sub/subview.do" class="dep3_txt  " target="_self"> 미술관</a></li>
+                                                            <li><a href="/sub/subview.do" class="dep3_txt  " target="_self"> 박물관</a></li>
+                                                            <li><a href="/sub/subview.do" class="dep3_txt  " target="_self"> 공연장</a></li>
+                                                        </ul>
+                                                    </ul>
+                                                </li>                                                <li class="in_dep3">
+                                                    <a href="/sub/subview.do" class="dep2_txt   m_in_dep3" target="_self">문화유산탐방</a>
+                                                    <ul class="dep3">
+                                                        <ul class="dep3">
+                                                            <li><a href="/sub/subview.do" class="dep3_txt  " target="_self"> 국가지정 문화재</a></li>
+                                                            <li><a href="/sub/subview.do" class="dep3_txt  " target="_self"> 도지정 문화재</a></li>
+                                                            <li><a href="/sub/subview.do" class="dep3_txt  " target="_self"> 향토 문화유산</a></li>
+                                                        </ul>
+                                                    </ul>
+                                                </li>
+                                            </ul>         
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="dep1">
+                                    <a class="dep1_txt" href="/sub/subview.do">관광정보</a>
+                                    <div class="dep1_sub_menu sub_menu04">
+                                        <div class="left">
+                                            <div class="txt_box">
+                                                <strong class="up_dep1_txt">관광정보</strong>
+                                                <p class="txt">Visit Pohang</p>
+                                            </div>
+                                        </div>
+                                        <div class="right">
+                                            <ul class="dep2">
+                                                <li class="in_dep3">
+                                                    <a href="/sub/subview.do" class="dep2_txt   m_in_dep3" target="_self">포항시티투어버스</a>
+                                                    <ul class="dep3">
+                                                        <ul class="dep3">
+                                                            <li><a href="/sub/subview.do" class="dep3_txt  " target="_self"> 예약서비스</a></li>
+                                                            <li><a href="/sub/subview.do" class="dep3_txt  " target="_self"> 코스안내</a></li>
+                                                        </ul>
+                                                    </ul>
+                                                </li>
+                                                <li class="in_dep3">
+                                                    <a href="/phtour/9406/subview.do" class="dep2_txt   m_in_dep3" target="_self">맛투어</a>
+                                                    <ul class="dep3">
+                                                        <ul class="dep3">
+                                                            <li><a href="/sub/subview.do" class="dep3_txt  " target="_self"> 특산물</a></li>
+                                                            <li><a href="/sub/subview.do" class="dep3_txt  " target="_self"> 영일만친구 야시장</a></li>
+                                                            <li><a href="/sub/subview.do" class="dep3_txt  " target="_self"> 설머리물회지구</a></li>
+                                                            <li><a href="/sub/subview.do" class="dep3_txt  " target="_self"> 등푸른막회거리</a></li>
+                                                        </ul>
+                                                    </ul>
+                                                </li>
+                                                <li class="in_dep3">
+                                                    <a href="/sub/subview.do" class="dep2_txt   m_in_dep3" target="_self">음식점인증업소</a>
+                                                    <ul class="dep3">
+                                                        <ul class="dep3">
+                                                            <li><a href="/sub/subview.do" class="dep3_txt  " target="_self"> 전시관</a></li>
+                                                            <li><a href="/sub/subview.do" class="dep3_txt  " target="_self"> 음식점위생등급제</a></li>
+                                                            <li><a href="/sub/subview.do" class="dep3_txt  " target="_self"> 안심식당</a></li>
+                                                            <li><a href="/sub/subview.do" class="dep3_txt  " target="_self"> 식객단이 평가한 친절업소</a></li>
+                                                        </ul>
+                                                    </ul>
+                                                </li>
+												<li class="in_dep3">
+                                                    <a href="/sub/subview.do" class="dep2_txt   m_in_dep3" target="_self">숙박</a>
+                                                    <ul class="dep3">
+                                                        <ul class="dep3">
+                                                            <li><a href="/sub/subview.do" class="dep3_txt  " target="_self"> 호텔·콘도</a></li>
+                                                            <li><a href="/sub/subview.do" class="dep3_txt  " target="_self"> 펜션</a></li>
+                                                            <li><a href="/sub/subview.do" class="dep3_txt  " target="_self"> 게스트하우스</a></li>
+                                                            <li><a href="/sub/subview.do" class="dep3_txt  " target="_self"> 숙박업소</a></li>
+                                                        </ul>
+                                                    </ul>
+                                                </li>
+                                            </ul>         
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="dep1">
+                                    <a class="dep1_txt" href="/board/list.do">커뮤니티</a>
+                                    <div class="dep1_sub_menu sub_menu05">
+                                        <div class="left">
+                                            <div class="txt_box">
+                                                <strong class="up_dep1_txt">커뮤니티</strong>
+                                                <p class="txt">Visit Pohang</p>
+                                            </div>
+                                        </div>
+                                        <div class="right">
+                                            <ul class="dep2">
+                                                <li class="in_dep3">
+                                                    <a href="/board/list.do" class="dep2_txt   m_in_dep3" target="_self">공지사항</a>
+                                                </li>
+                                                <li class="in_dep3">
+                                                    <a href="/board/writer_page" class="dep2_txt   m_in_dep3" target="_self">글쓰기</a>
+                                                </li>
+                                                <!--
+                                                <li class="in_dep3">
+                                                    <a href="/board/list.do" class="dep2_txt   m_in_dep3" target="_self">이벤트</a>
+                                                </li>
+                                                <li class="in_dep3">
+                                                    <a href="/board/list.do" class="dep2_txt   m_in_dep3" target="_self">불편신고</a>
+                                                </li>                                                <li class="in_dep3">
+                                                    <a href="/board/list.do" class="dep2_txt   m_in_dep3" target="_self">나만의 여행일정</a>
+                                                </li>-->
+                                            </ul>         
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="gnb_other_btn">
+                            <ul class="9296"> 
+                                <li><button type="button" class="hd_srch_btn" title="검색 열기"></button></li>
+                                <li><a href="/phtour/sitemap.do" class="sitemap_btn">사이트맵</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div id="container">
+            <div id="sub_top" class="sub_top2">		
+                <div class="inner">
+                    <p class="tit">역사</p>
+                    <p class="txt"><img src="/include/source/turo_point_txt.png" alt="특별함으로 가득한 퐝퐝!"></p>
+                </div>
+            </div>
+            <div id="content">
+                <div id="snb">
+                    <div class="snb_top">
+                        <div class="inner">
+                            <h2 class="tit">테마관광</h2>
+                        </div>
+                    </div>
+                        <ul class="snb_list">
+                            <li class="snb_dep1 in_dep2">
+                                <a class="snb_dep1_tit" target="_self">자연</a>
+                            </li>  
+                            <li class="snb_dep1 in_dep2">
+                                <a class="active  snb_dep1_tit" target="_self">역사</a>
+                                <ul class="snb_dep2 active" style="display:block;">
+                                    <li class="snb_dep3 active" >
+                                        <a class="active" target="_self">사찰</a>
+                                    </li>   
+                                    <li >
+                                        <a class="" target="_self">기념관</a>
+                                    </li>
+                                    <li >
+                                        <a class="" target="_self">기타</a>
+                                    </li>
+                                </ul>
+                            </li>   
+                            <li class="snb_dep1 in_dep2">
+                                <a class="snb_dep1_tit" target="_self">휴양</a>
+                            </li>                        
+                            <li class="snb_dep1 in_dep2">
+                                <a class="snb_dep1_tit" target="_self">체험</a>
+                            </li>  
+                        </ul>
+                </div>
+                 <div id="sub_page_nav">
+                    <div class="inner">
+                        <ul class="page_location">
+                            <li class="home"><img src="/include/source/pohang/page_nav_home.png" alt="홈"></li>
+                            <li class="loc1">
+                                <span class="sub_nav_tit" title="리스트 열기">테마관광</span>
+                                <a href="javascript:void();" class="sub_nav_tit" title="리스트 열기">테마관광</a>
+                            </li>
+                            <li class="loc2">
+                                <span class="sub_nav_tit" title="리스트 열기">역사</span>
+                                <a href="javascript:void();" class="sub_nav_tit" title="리스트 열기">역사</a>
+                            </li>
+                            <li class="loc3">
+                                <span class="sub_nav_tit" title="리스트 열기">사찰</span>
+                                <a href="javascript:void();" class="sub_nav_tit" title="리스트 열기">사찰</a>
+                            </li>
+                        </ul>
+                        <div class="page_util_btn">
+                            <div class="page_share_btn_wrap">
+                                <button type="button" class="page_share_list_btn" style="border: none;">
+                                    <span>공유 리스트</span>
+                                </button>
+                                <a href="javascript:printPhtourPage()" class="page_print_btn" >인쇄</a>
+                            </div>
+                            <!--page_util_btn End-->
+                        </div>
+                    </div>
+                    </div>
+                    <div id="tabBox">
+                        <button type="button" class="tab_active_tit">사찰</button>
+                        <div class="tab_table">
+                            <ul class="tab_row">
+                                <li class="tab_col active">
+                                    <a href="/phtour/9296/subview.do" target="_self"> 사찰</a>
+                                </li>
+                                <li class="tab_col">
+                                    <a href="/phtour/9296/subview.do" target="_self"> 기념관</a>
+                                </li>
+                                <li class="tab_col">
+                                    <a href="/phtour/9296/subview.do" target="_self"> 기타</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                                <div class="_fnctWrap _articleBasic">
+                                    <div id="board">
+                                        <div class="bbs_util_wrap">
+                                            <div id="bbs_search">
+                                                <form id="searchForm">
+                                                    <fieldset style="border: none;">
+                                                        <select name="srchColumn" id="bbs_srch_select">
+                                                            <option value="">전체</option>
+                                                            <option value="">전체</option>
+                                                            <option value="">전체</option>
+                                                        </select>
+                                                        <input type="text" name="srchWrd" id="bbs_srch_word" value="" placeholder="검색어를 입력해주세요.">                                                
+                                                        <button type="submit" class="bbs_srch_btn">검색</button>
+                                                    </fieldset>
+                                                </form>
+                                            </div>
+                                            <div id="list_num">총 <strong class="num">11</strong>건(<strong></strong>/1 페이지)</div>
+                                        </div>
+                                        <!--bbs_util_wrap End-->
+                                        <form name="viewForm" method="post">
+                                            <div class="tour_list_default">
+                                                <ul class="tour_bbs_list col3 skin1-1">
+                                                    <li>
+                                                        <a href="/tourInfo/phtour/6/11/tourView.do" onclick="jf_viewTour('phtour', '6', '11')">
+                                                        <p class="thumb"><span class="img"><img src="/include/source/sub/1967239_image2_1.jpg" alt="고석사 이미지"></span>
+                                                        <span class="food_mark"></span></p>
+                                                        <div class="cont">
+                                                            <p class="tit">고석사</p>
+                                                        </div>								
+                                                        </a>
+                                                        <div class="util">
+                                                            <p class="ico address">남구 장기면 방산로 526 </p>
+                                                            <a href="javascript:tourPlanPage(11);" class="ico schedule_btn">일정짜기</a>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </form>
+                                        <div class="board_list_paging">
+                                            <form name="pageForm" method="post" action="">
+                                                <div class="web_paging">
+                                                    <div class="_paging">
+                                                        <div class="_inner">
+                                                            <a href="javascript:page_link('1')" class="_first" title="처음 목록으로 이동">처음</a>
+                                                            <ul>
+                                                                <li><strong title="현재 페이지">1</strong></li>
+                                                            </ul>
+                                                            <a href="javascript:page_link('1')" class="_last" title="마지막 목록으로 이동">끝</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                            <div class="page_dept_info">
+                                <ul>
+                                    <li>
+                                        <span class="dh">담당부서</span>
+                                        <span class="team_txt">지정된 담당자가 없습니다.</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                <!-- content End -->
+            </div>
+            <!-- container End -->
+
+
+<div id="footer">
+   <div class="inner">
+		<div class="f_nav"> 
+			<ul>
+				<li><a href="/pohang/8858/subview..do" class="highlight">개인정보처리방침</a></li>
+				<li><a href="javascript:void(0);">관광불편신고</a></li>
+				<li><a href="javascript:void(0);">사이트맵</a></li>
+			</ul>
+		</div>
+
+		<div class="f_info"> 
+			<p class="address"><span>37683 경상북도 포항시 남구 시청로 1 (대잠동, 포항시청)</span> <span>대표전화 : 054-270-8282</span> <span>관광안내전화 : 1330</span></p> 
+			<p class="copyright">ⓒ POHANG CITY. All Rights Reserved.</p> 
+		</div>
+
+		<div class="family_site_wrap">
+			<button type="button" class="family_site_tit" title="리스트 열기">패밀리사이트</button>
+			<ul class="family_list"> 
+				<li><a href="https://phcf.or.kr/festival/streetArtView.do" target="_blank" title="포항시 축제안내 새 창으로 이동">포항시 축제안내</a></li>
+			<li><a href="http://piff.phcf.or.kr/" target="_blank" title="포항국제불빛축제 새 창으로 이동">포항국제불빛축제</a></li>
+			<li><a href="http://www.pohangmarathon.co.kr/" target="_blank" title="통일기원해변마라톤 새 창으로 이동">통일기원해변마라톤</a></li>
+			<li><a href="https://www.lighthouse-museum.or.kr/" target="_blank" title="국립등대박물관 새 창으로 이동">국립등대박물관</a></li>
+			<li><a href="http://homigot.invil.org" target="_blank" title="호미곶 정보화마을 새 창으로 이동">호미곶 정보화마을</a></li>
+			<li><a href="http://gigye.invil.org" target="_blank" title="기계장터 정보화마을 새 창으로 이동">기계장터 정보화마을</a></li>
+			<li><a href="http://hak.invil.org" target="_blank" title="신광비학산 정보화마을 새 창으로 이동">신광비학산 정보화마을</a></li>
+			<li><a href="http://slow.invil.org" target="_blank" title="상옥참느리 정보화마을 새 창으로 이동">상옥참느리 정보화마을</a></li>
+			<li><a href="http://www.pohang.go.kr/pohang/7139/subview.do" target="_blank" title="구룡포 과메기 문화관 새 창으로 이동">구룡포 과메기 문화관</a></li>
+			<li><a href="https://www.foresttrip.go.kr/indvz/main.do?hmpgId=ID02030052" target="_blank" title="비학산자연휴양림 새 창으로 이동">비학산자연휴양림</a></li>
+			<li><a href="/sea/index.do" target="_blank" title="형산강수상레저타운 새 창으로 이동">형산강수상레저타운</a></li>
+			<li><a href="http://innerharbor.pohang.go.kr/" target="_blank" title="포항운하 새 창으로 이동">포항운하</a></li>
+			<li><a href="http://www.gb.go.kr/Main/open_contents/section/arboretum/" target="_blank" title="경상북도수목원 새 창으로 이동">경상북도수목원</a></li>
+			</ul>
+		</div>
+   </div>
+</div>
+</div>
+</body>
+</html>
