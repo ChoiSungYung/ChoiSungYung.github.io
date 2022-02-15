@@ -5,8 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>최성영의 포트폴리오</title>
-    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/portfolio.css">
+    <script src= "/js/easypiechart.js" ></script>
     <script src = "https://code.jquery.com/jquery-latest.js"></script>
+
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"> 
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script> 
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/easy-pie-chart/2.1.6/jquery.easypiechart.min.js"></script>
     <script>
         $(document).ready(function(){
             var ht = $(window).height();
@@ -18,142 +25,151 @@
         })
     </script>
 </head>
+
 <style>
-.hd_wrap {
-    width:100%; 
-    height:124px;
-    border-bottom:1px solid red;
-    position: fixed;
-    top: 0; 
-    left: 0;
-    background-color: aquamarine;
-    z-index:500;}
-.hd_wrap .inner {
-    clear:both;
-    width:1300px; 
-    height:124px; 
-    margin:0 auto; 
-    background-color: rgb(3, 149, 101);}
-.hd_wrap .inner .tnb{
-    height:40px; 
-    background-color: rgb(71, 163, 133);}
-.hd_wrap .inner .gnb{
-    height:84px; 
-    background-color: rgb(19, 105, 76);}
-#page1 .page_wrap {
-    width:100%;  
-    margin: 0; 
-    top:0; 
-    left:0; 
-    background-color: rgb(255, 130, 130);}
-.page_wrap .inner {
-    clear:both;
-    width:1300px; 
-    min-height:100vh;
-    margin:0 auto; }
-.page_wrap {
-    width:100%;  
-    margin: 0; 
-    top:0; 
-    left:0; }
-#page1.page_wrap  {
-    background-color: rgb(173, 97, 97);}
-#page1.page_wrap .inner {
-    background-color: rgb(170, 117, 148);
-    min-height:100vh;}
-#page2.page_wrap {
-    background-color: rgb(193, 255, 111);}
-#page2.page_wrap .inner {
-    background-color: rgb(120, 255, 102);
-    min-height:100vh;}
-#page3.page_wrap {
-    background-color: rgb(134, 142, 255);}
-#page3.page_wrap .inner {
-    background-color: rgb(77, 116, 153);}
+    .skill_fr {
+        width: 1000px;
+        height: 350px;
+        border-left: 5px solid #333;
+        border-bottom: 5px solid #333;
+        margin: 0 auto;
+    }
+    .skill_fr li { width: 16%; float:left; height: 400px; position:relative; }
+    .skill_fr li span { display:block; position:absolute; left:0px; } 
+    .skill_fr li span.bar { bottom:48px; width: 50px; background-color: blueviolet; height:10px; left: 50px; transition-duration:1.5s; }
+    .skill_fr li span.lb { bottom:0px; width: 100%; text-align:center; }
 
-.ft_wrap {
-    width:100%; 
-    height:100px; 
-    position:relative;
-    bottom: 0; left: 0;
-    background-color: rgb(253, 255, 130);}
-.ft_wrap .inner {
-    clear:both;
-    width:1300px; 
-    height:100px; 
-    margin:0 auto; 
-    background-color: rgb(255, 198, 124);}
-#page1.page_wrap .inner{ margin-top: 125px;}
-#page1.page_wrap .inner .profile_box { padding-top:100px; width: 600px; margin:0 auto;}
-#page1.page_wrap .inner .profile_box img {border-radius: 51%; width:200px; float:left;  margin-right:100px;}
-#page1.page_wrap .inner .profile_box ul{ float:left; }
-.page_tit {padding-top:50px; font-size:25px; text-align:center;}
-.detail {font-size:26px; text-align:center;}
-
-
-.item_tit{font-size:18px; line-height:40px; border:1px solid black;}
-.item_con{font-size:18px; border:1px solid black;}
-
-.hd_wrap .inner .tnb > ul {height:100%; float:right;}
-.hd_wrap .inner .tnb > ul > li {height:100%; line-height:40px; float:left; font-size:18px; padding-left: 20px;}
-.hd_wrap .inner .gnb .logo {float:left; width:125px; height: 84px; padding-left:20px; padding-right:50px;}
-.hd_wrap .inner .gnb .logo img {width:100%; height:100%;}
-.hd_wrap .inner .gnb > ul {height:100%; float:left;}
-.hd_wrap .inner .gnb > ul > li {height:100%; width:200px; text-align:center; line-height:84px; float:left; font-size:18px; padding: 0 20px;}
-#quick {position:fixed; right:40px; top:50%; margin-top:-80px; z-index:9999;}
-
-.gal_fr { clear:both; width: 1200px; margin: 0 auto; }
-.gal_fr:after { content:""; display:block; clear: both; }
-.gal_fr li { width:300px; float:left; margin: 50px; position:relative; }
-.gal_fr li a { display:block; width:300px; height: auto; }
-.gal_fr li img { display:block; width: 300px; height: auto; }
-.gal_fr li a .gal_tit_fr { position:absolute; width: 100%; top:0px; left: 0; height: 100%; opacity:0; visibility: hidden; transition-duration:0.7s; color:#fff; text-align: center; }
-.gal_fr li a .gal_tit { line-height: 3; padding-top: 50px; }
-.gal_fr li a .gal_com { line-height:1.6; padding-top:20px; }
-.gal_fr li a:hover .gal_tit_fr { opacity: 1; visibility: visible; }
-
-.social_fr { clear:both; width: 1200px; margin: 0 auto; }
-.social_fr li { float:left; margin: 20px; }
-.social_fr li.mobile { display:none; }
-
-@media screen and (max-width:767px) {   /* 모바일의 실제 크기 : 767px 이하 */
-    .social_fr li:nth-child(4n) { clear:both; }
-    .social_fr li.mobile { display:block; }
-}
+    .chart {
+    padding-top: 100px;
+    float: left;
+    width: 33.33%;
+    height: 230px;
+    text-align: center;
+    }
+    .chart span.title{position: relative; display: block; width: 100%; text-align: center; top: 110px;}
+    
 </style>
+<script>
+    $('.chart1').easyPieChart({
+    barColor: '#f16529',
+    trackColor: '#ccc',
+    scaleColor: '#fff',
+    lineCap: 'butt',
+    lineWidth: 30,
+    size: 200,
+    animate: 1000,
+    onStart: $.noop,
+    onStop: $.noop
+  });
+
+  $('.chart2').easyPieChart({
+      barColor: '#1c88c7',
+      trackColor: '#fff',
+      scaleColor: '#ccc',
+      lineCap: 'round',
+      lineWidth: 30,
+      size: 200,
+      animate: 1000,
+      onStart: $.noop,
+      onStop: $.noop
+  }); 
+
+  $('.chart3').easyPieChart({
+      barColor: '#1c88c7',
+      trackColor: '#fff',
+      scaleColor: '#fff',
+      lineCap: 'square',
+      lineWidth: 30,
+      size: 200,
+      animate: 1000,
+      onStart: $.noop,
+      onStop: $.noop
+  });
+</script> 
 <body>
 <header class="hd_wrap">
+    
     <div class="inner">
         <div class="tnb">
             <ul class="top_menu">
-                <li>로그인</li>
-                <li>회원가입</li>
+                <li class="item1"><img class="social_img" src="./img/blog.png"/><a href="">블로그</a></li>
+                <li class="item2"><img class="social_img" src="./img/youtube.png"/><a href="">유튜브</a></li>
+                <li class="item3"><img class="social_img" src="./img/github.png"/><a href="">깃허브</a></li>
+                <li class="item4"><img class="social_img" src="./img/email.png"/><a href="">이메일</a></li>
+                <li class="item5"><img class="social_img" src="./img/phone-call.png"/><a href="">TEL</a></li>
             </ul>
         </div>
-        <div class="gnb">
+        <div class="gnb" >
             <div class="logo">
-                <img class="logo_img" src="logo.png" alt="">
+                <img class="logo_img" src="./img/logo.png" alt="">
             </div>
             <ul class="nav_menu">
-                <li>자기소개</li>
-                <li>전문능력</li>
-                <li>포트폴리오</li>
-                <li>Contect</li>
+                <li class="gnb_item1">자기소개</li>
+                <li class="gnb_item2">전문능력</li>
+                <li class="gnb_item3">포트폴리오</li>
+                <li class="gnb_item4">Contect</li>
             </ul>
         </div>
     </div>
 </header>
+<script>
+    $(document).ready(function(){
+
+        $('.gnb_item1').click(function(){
+            var offset = $('#page1').offset(); //선택한 태그의 위치를 반환
+
+                //animate()메서드를 이용해서 선택한 태그의 스크롤 위치를 지정해서 0.4초 동안 부드럽게 해당 위치로 이동함 
+
+            $('html').animate({scrollTop : offset.top-125}, 400);
+
+        });
+        $('.gnb_item2').click(function(){
+
+            var offset = $('#page2').offset(); //선택한 태그의 위치를 반환
+
+                //animate()메서드를 이용해서 선택한 태그의 스크롤 위치를 지정해서 0.4초 동안 부드럽게 해당 위치로 이동함 
+
+            $('html').animate({scrollTop : (offset.top)-100}, 400);
+
+        });
+        $('.gnb_item3').click(function(){
+
+        var offset = $('#page3').offset(); //선택한 태그의 위치를 반환
+
+            //animate()메서드를 이용해서 선택한 태그의 스크롤 위치를 지정해서 0.4초 동안 부드럽게 해당 위치로 이동함 
+
+        $('html').animate({scrollTop : (offset.top)-100}, 400);
+
+
+        });
+        $('.gnb_item4').click(function(){
+
+        var offset = $('#page4').offset(); //선택한 태그의 위치를 반환
+
+            //animate()메서드를 이용해서 선택한 태그의 스크롤 위치를 지정해서 0.4초 동안 부드럽게 해당 위치로 이동함 
+
+        $('html').animate({scrollTop : (offset.top)-100}, 400);
+
+
+        });
+
+    });
+
+</script>
 
 <section class="page_wrap" id="page1">
     <div class="inner">
-        <h2 class="page_tit">introduce</h2>
-        <div class="profile_box">
-            <img class="myphoto" src="profile.jpg"/>
+        <h2 class="page_tit"><img src="./img/introduce.png"/></h2>
+        <div class="profile_box" data-aos="zoom-out-right">
+            <img class="myphoto" src="./img/profile.jpg"/>
             <ul class="intro_fr">
+                <div class="item" data-aos="fade-up" data-aos-anchor-placement="top-center">
                 <li class="item1">
                     <span class="item_tit">이름:</span>
                     <span class="item_con">최성영</span>
+                    <span class="item_con">🅲🅷🅾🅸 🆂🆄🅽🅶 🆈🆄🅽🅶</span>
                 </li>
+               </div>
                 <li class="item2">
                     <span class="item_tit">나이:</span>
                     <span class="item_con">31살</span>
@@ -171,6 +187,27 @@
                     <span class="item_con">INTP</span>
                 </li>
             </ul>
+            
+            <ul>
+                <li>
+                <p><br>
+                <strong>1 창업에 진심인 사람!</strong><br>
+                . CEO로 참가해 전교생 대상 대학교창업경진대회 우승(자폐아동을 위한 감성 인식 AR적용 동화어플리케이션)<br>
+                . 실리콘벨리 3개월간 인턴십, VC 투자유치활동 및, 벤처 인큐베이터 사무 보조 활동<br>
+                . 졸업보다 창업역량에 중점을 전공학부, 중퇴 후 저렴한 영화티켓 회사 북스크린 창업. <br>
+                . 2017년 창업 2년 내 연 매출 10억 달성. 현 사원 수 3명.<br>
+                <br>
+                <strong>2 영상 편집에 진심인 사람!</strong><br>
+                . 어린 시절부터 영상제작에 관심이 있어 중학교 때부터 학예회 영상제작.<br> 
+                . 동아리 활동으로 (국제자원봉사단체) UNAI에서 촬영 및 영상 편집을 했음.<br> 
+                . 위 경험을 살려서 유튜브로 도서 홍보 채널을 운영해서 1만 구독자 달성.<br> 
+                <br>
+                <strong>3 개발에 진심인 사람!</strong><br>
+                . 기획자에서 웹 및 소프트웨어 개발자로 역량 강화에 집중.<br> 
+                . 동영상 플랫폼에 관한 알고리즘을 특허로 출원<br> 
+                . 전액 자비 부담으로 자바SW웹 개발자 개발 6개월 과정 수료<br> </p>
+                </li>
+            </ul>
         </div>
         <script>
             $(function(){
@@ -183,72 +220,224 @@
 </section>
 <section class="page_wrap" id="page2">
     <div class="inner">
-        <h2 class="page_tit">직무능력</h2>
+        <h2 class="page_tit"><img src="./img/competency.png"/></h2>
+        <br><br><br>
         <ul class="skill_fr">
-            <li class="skill" id="">프로젝트1</li>
-            <li class="skill" id="">프로젝트2</li>
-            <li class="skill" id="">프로젝트3</li>
-            <li class="skill" id="">프로젝트4</li>
-            <li class="skill" id="">프로젝트5</li>
-        </ul>
-    </div>
-</section>
+            <li class="item1">
+                <span class="bar" data-len="90"></span>
+                <span class="lb">JAVA</span>
+            </li>
+            <li class="item2">
+                <span class="bar" data-len="85"></span>
+                <span class="lb">JSP</span>
+            </li>
+            <li class="item3">
+                <span class="bar" data-len="90"></span>
+                <span class="lb">MVC2</span>
+            </li>
+            <li class="item4">
+                <span class="bar" data-len="80"></span>
+                <span class="lb">SPRING</span>
+            </li>
+            <li class="item5">
+                <span class="bar" data-len="90"></span>
+                <span class="lb">HTML/CSS</span>
+            </li>
+            <li class="item6">
+                <span class="bar" data-len="95"></span>
+                <span class="lb">JAVASCRIPT/JQUERY</span>
+            </li>
+        </ul>   
+        <div class="chart chart1" data-percent="75"><span class="title">논리력</span></div>
+        <div class="chart chart2" data-percent="90"><span class="title">창의력</span></div>
+        <div class="chart chart3" data-percent="20"><span class="title">이기심</span></div>
 
+    </div>
+    <script>
+    $(function(){
+
+        AOS.init(); 
+        /* 주석부분과 같이 AOS API - Global Setting 가능
+        AOS.init({
+            offset: 120,
+            delay: 0,
+            duration: 400,
+            easing: 'ease',
+            once: false,
+            mirror: false,
+            anchorPlacement: 'top-bottom'
+        });    
+        */
+ 
+        $("#page2").hover(function(){
+            $(".skill_fr li").each(function(){
+                var skill = parseInt($(this).find(".bar").attr("data-len"));
+                $(this).find(".bar").height(skill*3.5);
+            });
+
+            $('.chart1').easyPieChart({
+            barColor: '#f16529',
+            trackColor: '#fff',
+            scaleColor: '#fff',
+            lineCap: 'butt',
+            lineWidth: 30,
+            size: 200,
+            animate: 1000,
+            onStart: $.noop,
+            onStop: $.noop
+            });
+
+            $('.chart2').easyPieChart({
+                barColor: '#1c88c7',
+                trackColor: '#fff',
+                scaleColor: '#fff',
+                lineCap: 'butt',
+                lineWidth: 30,
+                size: 200,
+                animate: 1000,
+                onStart: $.noop,
+                onStop: $.noop
+            }); 
+
+            $('.chart3').easyPieChart({
+                barColor: 'rgb(22 129 6)',
+                trackColor: '#fff',
+                scaleColor: '#fff',
+                lineCap: 'butt',
+                lineWidth: 30,
+                size: 200,
+                animate: 1000,
+                onStart: $.noop,
+                onStop: $.noop
+            });
+        });
+    });    
+    </script>
+</section>
 <section class="page_wrap" id="page3">
     <div class="inner">
-        <h2 class="page_tit">포트폴리오 갤러리</h2>
+        <h2 class="page_tit"><img style="height:150px;"src="./img/gallery.png"/></h2>
+        <div class="profile_box aos-init aos-animate" data-aos="zoom-out-right">
         <ul class="gal_fr">
             <li class="item1">
                 <a href="gal.html#page1">
-                    <img src="https://picsum.photos/250/250" alt="">
+                    <img style="height:250px; width:250px;"src="./img/project1.png" alt="">
                     <div class="gal_tit_fr">
-                        <h3 class="gal_tit">웹프로젝트 제목1</h3>
+                        <h3 class="gal_tit">영화 예매정보 사이트</h3>
                         <p class="gal_com">유형 : 브랜드형</p>
                     </div>
                 </a>
             </li>
             <li class="item2">
                 <a href="gal.html#page2">
-                    <img src="https://picsum.photos/250/251" alt="">
+                    <img style="height:250px; width:250px;"src="./img/project2.png" alt="">
                     <div class="gal_tit_fr">
-                        <h3 class="gal_tit">웹프로젝트 제목2</h3>
-                        <p class="gal_com">유형 : 기업형</p>
+                        <h3 class="gal_tit">도서 판매 쇼핑몰</h3>
+                        <p class="gal_com">유형 : 기업 쇼핑몰형</p>
                     </div>
                 </a>
             </li>
             <li class="item3">
-                <a href="gal.html#page3">
-                    <img src="https://picsum.photos/250/252" alt="">
+                <a href="https://choisungyung.github.io/project3/">
+                    <img style="height:250px; width:250px;"src="./img/project3.png" alt="">
                     <div class="gal_tit_fr">
-                        <h3 class="gal_tit">웹프로젝트 제목3</h3>
-                        <p class="gal_com">유형 : 관공서형</p>
+                        <h3 class="gal_tit">포항 관광문화 사이트</h3>
+                        <p class="gal_com">유형 : 공공기관 관광사이트</p>
                     </div>
                 </a>
             </li>
             <li class="item4">
                 <a href="gal.html#page4">
-                    <img src="https://picsum.photos/250/253" alt="">
+                    <img style="height:250px; width:250px;"src="./img/project4.png" alt="">
                     <div class="gal_tit_fr">
-                        <h3 class="gal_tit">웹프로젝트 제목4</h3>
+                        <h3 class="gal_tit">통일부 사이트</h3>
                         <p class="gal_com">유형 : 관공서형</p>
                     </div>
                 </a>
             </li>
+            <li class="item4">
+                <a href="gal.html#page5">
+                    <img style="height:250px; width:250px;"src="./img/project5.png" alt="">
+                    <div class="gal_tit_fr">
+                        <h3 class="gal_tit">동영상 공유 사이트 마이굿튜브</h3>
+                        <p class="gal_com">유형 : 동영상 공유 플랫폼</p>
+                    </div>
+                </a>
+            </li>
+            <li class="item4">
+                <a href="gal.html#page6">
+                    <img style="height:250px; width:250px;"src="./img/project6.png" alt="">
+                    <div class="gal_tit_fr">
+                        <h3 class="gal_tit">모바일 도서요약본 사이트</h3>
+                        <p class="gal_com">유형 : 모바일 도서요약본 사이트</p>
+                    </div>
+                </a>
+            </li>
         </ul>
-        <h2 class="detail"><a href="gal.html">자세히 보기</a></h2>
+        </div>
+    </div>
+</section>
+<section class="page_wrap" id="page4">
+    <div class="inner">
+        <h2 class="page_tit"><img src="./img/contact.png"/></h2>
+        <div class="profile_box aos-init aos-animate" data-aos="zoom-out-right">
+        <ul class="contact_fr">
+            
+            <li class="item1">CONTACT FORM</li>
+            <li class="item2"><span> 성함:</span><input type="text" class="input_data" name=""/> </li>
+            <li class="item3"><span> 연락처:</span><input type="text" class="input_data" name=""/></li>
+            <li class="item4"><p> 제안내용:</p><br><textarea rows="15" cols="100"></textarea></li>
+            <li class="item5"><input type="button" class="input_button" value="제출하기"/></li>
+        </ul>
+        </div>
     </div>
 </section>
 <footer class="ft_wrap">
     <div class="inner">
-
+            Copyright ChoiSungYung All right reserved.
     </div>
 </footer>
 <div id="quick">
     <ul>
-        <li class="item1"><a href="#page1">자기소개</a></li>
-        <li class="item2"><a href="#page2">직무능력</a></li>
-        <li class="item3"><a href="#page3">포트폴리오</a></li>
+        <li class="quick_item1"><a >자기소개</a></li>
+        <li class="quick_item2"><a >직무능력</a></li>
+        <li class="quick_item3"><a >포트폴리오</a></li>
+        <li class="quick_item4"><a >Contact</a></li>
     </ul>
 </div>
+<script>
+    $(document).ready(function(){
+
+        $('.quick_item1').click(function(){
+            var offset = $('#page1').offset(); //선택한 태그의 위치를 반환
+
+            $('html').animate({scrollTop : offset.top-125}, 400);
+
+        });
+        $('.quick_item2').click(function(){
+
+        var offset = $('#page2').offset(); //선택한 태그의 위치를 반환
+
+        $('html').animate({scrollTop : (offset.top)-100}, 400);
+
+        });
+        $('.quick_item3').click(function(){
+
+        var offset = $('#page3').offset(); //선택한 태그의 위치를 반환
+
+        $('html').animate({scrollTop : (offset.top)-100}, 400);
+
+        });
+        $('.quick_item4').click(function(){
+
+        var offset = $('#page4').offset(); //선택한 태그의 위치를 반환
+
+        $('html').animate({scrollTop : (offset.top)-100}, 400);
+
+        });
+
+    });
+
+</script>
 </body>
 </html>
